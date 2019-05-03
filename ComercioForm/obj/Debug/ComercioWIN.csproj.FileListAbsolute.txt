@@ -1,0 +1,9 @@
+C:\Users\Martin\source\repos\COMERCIO\ComercioForm\bin\Debug\ComercioForm.exe.config
+C:\Users\Martin\source\repos\COMERCIO\ComercioForm\bin\Debug\ComercioForm.exe
+C:\Users\Martin\source\repos\COMERCIO\ComercioForm\bin\Debug\ComercioForm.pdb
+C:\Users\Martin\source\repos\COMERCIO\ComercioForm\obj\Debug\ComercioForm.Properties.Resources.resources
+C:\Users\Martin\source\repos\COMERCIO\ComercioForm\obj\Debug\ComercioWIN.csproj.GenerateResource.cache
+C:\Users\Martin\source\repos\COMERCIO\ComercioForm\obj\Debug\ComercioWIN.csproj.CoreCompileInputs.cache
+C:\Users\Martin\source\repos\COMERCIO\ComercioForm\obj\Debug\ComercioForm.exe
+C:\Users\Martin\source\repos\COMERCIO\ComercioForm\obj\Debug\ComercioForm.pdb
+C:\Users\Martin\source\repos\COMERCIO\ComercioForm\obj\Debug\TPC_Comecio.Form1.resources
