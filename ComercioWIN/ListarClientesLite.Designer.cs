@@ -33,7 +33,7 @@
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnCompleto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientesLite)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,15 +42,15 @@
             this.dgvClientesLite.AllowUserToAddRows = false;
             this.dgvClientesLite.AllowUserToDeleteRows = false;
             this.dgvClientesLite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientesLite.Location = new System.Drawing.Point(47, 88);
+            this.dgvClientesLite.Location = new System.Drawing.Point(12, 52);
             this.dgvClientesLite.Name = "dgvClientesLite";
             this.dgvClientesLite.ReadOnly = true;
-            this.dgvClientesLite.Size = new System.Drawing.Size(570, 276);
+            this.dgvClientesLite.Size = new System.Drawing.Size(421, 167);
             this.dgvClientesLite.TabIndex = 0;
             // 
             // txtBusquedaCliente
             // 
-            this.txtBusquedaCliente.Location = new System.Drawing.Point(88, 32);
+            this.txtBusquedaCliente.Location = new System.Drawing.Point(114, 26);
             this.txtBusquedaCliente.Name = "txtBusquedaCliente";
             this.txtBusquedaCliente.Size = new System.Drawing.Size(100, 20);
             this.txtBusquedaCliente.TabIndex = 1;
@@ -58,9 +58,9 @@
             // 
             // btnAgregarCliente
             // 
-            this.btnAgregarCliente.Location = new System.Drawing.Point(671, 281);
+            this.btnAgregarCliente.Location = new System.Drawing.Point(454, 158);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
-            this.btnAgregarCliente.Size = new System.Drawing.Size(117, 38);
+            this.btnAgregarCliente.Size = new System.Drawing.Size(117, 31);
             this.btnAgregarCliente.TabIndex = 2;
             this.btnAgregarCliente.Text = "Agregar";
             this.btnAgregarCliente.UseVisualStyleBackColor = true;
@@ -68,7 +68,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(671, 232);
+            this.btnModificar.Location = new System.Drawing.Point(454, 120);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(117, 32);
             this.btnModificar.TabIndex = 3;
@@ -78,28 +78,29 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(671, 186);
+            this.button2.Location = new System.Drawing.Point(454, 84);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 33);
+            this.button2.Size = new System.Drawing.Size(117, 30);
             this.button2.TabIndex = 4;
             this.button2.Text = "Eliminar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnCompleto
             // 
-            this.button3.Location = new System.Drawing.Point(671, 141);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(117, 37);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Ver Todos Los Datos";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCompleto.Location = new System.Drawing.Point(454, 48);
+            this.btnCompleto.Name = "btnCompleto";
+            this.btnCompleto.Size = new System.Drawing.Size(117, 30);
+            this.btnCompleto.TabIndex = 5;
+            this.btnCompleto.Text = "Ver Todos Los Datos";
+            this.btnCompleto.UseVisualStyleBackColor = true;
+            this.btnCompleto.Click += new System.EventHandler(this.btnCompleto_Click);
             // 
             // ListarClientesLite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
+            this.ClientSize = new System.Drawing.Size(583, 244);
+            this.Controls.Add(this.btnCompleto);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregarCliente);
@@ -121,6 +122,6 @@
         private System.Windows.Forms.Button btnAgregarCliente;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCompleto;
     }
 }

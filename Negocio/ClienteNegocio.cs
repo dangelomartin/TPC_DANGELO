@@ -5,37 +5,51 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Dominio;
-using AccesoaDatos;
+using AccesoDatos;
 
 
 namespace Negocio
 {
       public class ClienteNegocio
     {
-        public List<ClienteLite> ListarCliente()
+        public List<Cliente> ListarCliente()
         {
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
             SqlDataReader lector;
-            List<ClienteLite> listado = new List<ClienteLite>();
-            ClienteLite nuevo;
+            List<Cliente> listado = new List<Cliente>();
+            Cliente nuevo;
 
             try
             {
                 conexion.ConnectionString = AccesoDatos.AccesoDatosMaster.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select c.id, c.nombre, c.cuit, c.observaciones from clientes as c";
+                comando.CommandText = "select c.id,c.nombre,c.direccion,c.cp,p.nombre as Provincia,c.telefono,c.email,con.descripcion as CondicionIva,c.cuit,c.observaciones,c.estado from clientes c, provincias p, CONTRIBUYENTES con where c.idprovincia=p.id and con.ID=c.IDCONTRIBUYENTE";
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
 
                 while (lector.Read())
                 {
-                    nuevo = new ClienteLite();
+                    nuevo = new Cliente();
                     nuevo.id = (int)lector["id"];
                     nuevo.Nombre = (string)lector["Nombre"];
-                    nuevo.Cuit = (string)lector["cuit"];
+                    nuevo.Direccion = (string)lector["direccion"];
+                    nuevo.CP = (int)lector["cp"];
                     
+                    nuevo.Telefono = (string)lector["telefono"];
+                    nuevo.Email = (string)lector["email"];
+                    
+                    nuevo.Cuit = (string)lector["cuit"];
+                    nuevo.Observaciones = (string)lector["observaciones"];
+                    nuevo.estado = (bool)lector["estado"];
+                    nuevo.Provincia = new Provincia();
+                    nuevo.Provincia.Nombre = lector["Provincia"].ToString();
+                    nuevo.contribuyente = new Contribuyente();
+                    nuevo.contribuyente.Descripcion = lector["CondicionIva"].ToString();
+                    /*
+                
+
 
                     /*nuevo.Nombre = lector.GetString(1);
                     nuevo.Direccion = lector.GetString(2);
@@ -45,11 +59,11 @@ namespace Negocio
                     nuevo.Cuit = lector.GetString(8);
                     nuevo.Observaciones = lector.GetString(9);
                     */
-                    
 
-                    
-                    
-                    
+
+
+
+
 
 
                     listado.Add(nuevo);
@@ -103,7 +117,7 @@ namespace Negocio
             try
             {
                 
-                accesoDatos.setearConsulta("update Clientes Set Nombre=@Nombre, direccion=@direccion, cp=@cp, idprovincia=@idprov, telefono=@telefono, email=@email, idcontribuyente=@idcont,cuit=@cuit,observaciones=@obs, Where Id=" + modificar.id.ToString());
+                accesoDatos.setearConsulta("update Clientes Set Nombre=@Nombre, direccion=@direccion, cp=@cp, idprovincia=@idprov, telefono=@telefono, email=@email, idcontribuyente=@idcont,cuit=@cuit,observaciones=@obs where Id=" + modificar.id.ToString());
                 accesoDatos.Comando.Parameters.Clear();
                 
                 accesoDatos.Comando.Parameters.AddWithValue("@Nombre", modificar.Nombre);

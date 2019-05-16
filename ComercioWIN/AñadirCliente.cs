@@ -35,13 +35,29 @@ namespace ComercioWIN
             {
                 cboContribuyente.DataSource = contribuyenteNegocio.listarcontribuyente();
                 cboProvincia.DataSource = provinciaNegocio.ListarProvincias();
-            }
-            catch (Exception)
-            {
 
-                throw;
+                if(ClienteLocal != null)
+                {
+                    txtCuit.Text = ClienteLocal.Cuit;
+                    txtNombre.Text = ClienteLocal.Nombre;
+                    txtDireccion.Text = ClienteLocal.Direccion;
+                    txtCP.Text = ClienteLocal.CP.ToString();
+                    cboProvincia.SelectedItem = cboProvincia.FindString(ClienteLocal.Provincia.Nombre);
+                    txtTelefono.Text = ClienteLocal.Telefono;
+                    txtEmail.Text = ClienteLocal.Email;
+                    cboContribuyente.SelectedItem = cboContribuyente.FindString(ClienteLocal.contribuyente.Descripcion);
+                    txtObservaciones.Text = ClienteLocal.Observaciones;
+                    ckbActivo.Checked = ClienteLocal.estado;
+
+                }
+                    
+              
             }
-           
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

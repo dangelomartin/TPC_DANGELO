@@ -14,7 +14,7 @@ namespace ComercioWIN
 {
     public partial class ListarClientesLite : Form
     {
-        public List<ClienteLite> ListaClienteLocal;
+        public List<Cliente> ListaClienteLocal;
         public ListarClientesLite()
         {
             InitializeComponent();
@@ -43,7 +43,17 @@ namespace ComercioWIN
                 
                 ListaClienteLocal = negocio.ListarCliente();
                 dgvClientesLite.DataSource = ListaClienteLocal;
-                            
+                dgvClientesLite.Columns[2].Visible = false;
+                dgvClientesLite.Columns[3].Visible = false;
+                dgvClientesLite.Columns[4].Visible = false;
+                dgvClientesLite.Columns[5].Visible = false;
+                dgvClientesLite.Columns[6].Visible = false;
+                dgvClientesLite.Columns[7].Visible = false;
+                dgvClientesLite.Columns[9].Visible = false;
+                dgvClientesLite.Columns[10].Visible = false;
+                
+
+
             }
             catch (Exception ex)
             {
@@ -51,7 +61,24 @@ namespace ComercioWIN
             }
         }
 
+        private void CargarListaComp()
+        {
+            ClienteNegocio negocio = new ClienteNegocio();
+            try
+            {
 
+                ListaClienteLocal = negocio.ListarCliente();
+                dgvClientesLite.DataSource = ListaClienteLocal;
+           
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
 
         private void txtBusquedaCliente_TextChanged(object sender, EventArgs e)
@@ -65,7 +92,7 @@ namespace ComercioWIN
             {
                 if(txtBusquedaCliente.Text.Length >=2)
                 {
-                    List<ClienteLite> lista;
+                    List<Cliente> lista;
                     lista = ListaClienteLocal.FindAll(X => X.Nombre.Contains(txtBusquedaCliente.Text));
                     dgvClientesLite.DataSource = lista;
                 }
@@ -86,7 +113,7 @@ namespace ComercioWIN
         {
             try
             {
-                AñadirCliente modificar = new AñadirCliente((Cliente)dgvClientesLite.SelectedRows.id[1].text;);
+                AñadirCliente modificar = new AñadirCliente((Cliente)dgvClientesLite.CurrentRow.DataBoundItem);
                 modificar.ShowDialog();
                 CargarLista();
             }
@@ -94,6 +121,15 @@ namespace ComercioWIN
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        
+
+        private void btnCompleto_Click(object sender, EventArgs e)
+        {
+            CompletoCliente completo = new CompletoCliente((Cliente)dgvClientesLite.CurrentRow.DataBoundItem);
+            completo.ShowDialog();
+            CargarLista();
         }
     }
 }
