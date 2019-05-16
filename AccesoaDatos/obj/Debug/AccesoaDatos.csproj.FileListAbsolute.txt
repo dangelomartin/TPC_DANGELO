@@ -1,0 +1,6 @@
+C:\Users\Martin\source\repos\COMERCIO\AccesoaDatos\bin\Debug\AccesoaDatos.dll
+C:\Users\Martin\source\repos\COMERCIO\AccesoaDatos\bin\Debug\AccesoaDatos.pdb
+C:\Users\Martin\source\repos\COMERCIO\AccesoaDatos\obj\Debug\AccesoaDatos.csprojAssemblyReference.cache
+C:\Users\Martin\source\repos\COMERCIO\AccesoaDatos\obj\Debug\AccesoaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Martin\source\repos\COMERCIO\AccesoaDatos\obj\Debug\AccesoaDatos.dll
+C:\Users\Martin\source\repos\COMERCIO\AccesoaDatos\obj\Debug\AccesoaDatos.pdb

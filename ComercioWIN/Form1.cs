@@ -26,7 +26,7 @@ namespace ComercioWIN
 
         private void btnListarClientes_Click(object sender, EventArgs e)
         {
-            ListarClientes frm = new ListarClientes();
+            ListarClientesLite frm = new ListarClientesLite();
             frm.Show();
         }
 

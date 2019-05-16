@@ -16,3 +16,7 @@ C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\bin\Debug\Negocio.pdb
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.csproj.CopyComplete
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.Facturacompra.resources
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.ListarProvincias.resources
+C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.ListarClientesLite.resources
+C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.AñadirCliente.resources
+C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\bin\Debug\AccesoaDatos.dll
+C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\bin\Debug\AccesoaDatos.pdb

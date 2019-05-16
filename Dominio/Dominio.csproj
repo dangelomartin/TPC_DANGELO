@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Articulo.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="ClienteLite.cs" />
     <Compile Include="Color.cs" />
     <Compile Include="ComprobanteFactura.cs" />
     <Compile Include="CondicionPago.cs" />

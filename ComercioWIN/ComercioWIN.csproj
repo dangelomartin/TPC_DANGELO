@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AñadirCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AñadirCliente.Designer.cs">
+      <DependentUpon>AñadirCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Facturacompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,12 @@
     <Compile Include="ListarClientes.Designer.cs">
       <DependentUpon>ListarClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListarClientesLite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarClientesLite.Designer.cs">
+      <DependentUpon>ListarClientesLite.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListarProvincias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AñadirCliente.resx">
+      <DependentUpon>AñadirCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Facturacompra.resx">
       <DependentUpon>Facturacompra.cs</DependentUpon>
     </EmbeddedResource>
@@ -80,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListarClientes.resx">
       <DependentUpon>ListarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarClientesLite.resx">
+      <DependentUpon>ListarClientesLite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListarProvincias.resx">
       <DependentUpon>ListarProvincias.cs</DependentUpon>

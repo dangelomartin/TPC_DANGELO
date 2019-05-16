@@ -12,13 +12,13 @@ namespace Dominio
         public string Nombre { set; get; }
         public string Direccion { set; get; }
         public int CP { set; get; }
-        public int idProvincia { set; get; }
+        public Provincia Provincia { set; get; }
         public string Telefono { set; get; }
         public string Email { set; get; }
-        public int idContribuyente { set; get; }
+        public Contribuyente contribuyente { set; get; }
         public string Cuit { set; get; }
         public string Observaciones { set; get; }
-        public int estado { set; get; }
+        public bool estado { set; get; }
 
     }
 }

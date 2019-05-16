@@ -9,7 +9,11 @@ namespace Dominio
     public class Contribuyente
     {   
         public int id { set; get; }
-        public string TipoContribuyente { set; get; }
+        public string Descripcion { set; get; }
         public Iva IVA { set; get; }
+        public override string ToString()
+        {
+            return Descripcion;
+        }
     }
 }
