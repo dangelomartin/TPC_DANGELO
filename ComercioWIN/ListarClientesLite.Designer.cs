@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvClientesLite = new System.Windows.Forms.DataGridView();
             this.txtBusquedaCliente = new System.Windows.Forms.TextBox();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnCompleto = new System.Windows.Forms.Button();
+            this.lblBusqueda = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientesLite)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,6 +43,16 @@
             // 
             this.dgvClientesLite.AllowUserToAddRows = false;
             this.dgvClientesLite.AllowUserToDeleteRows = false;
+            this.dgvClientesLite.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvClientesLite.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvClientesLite.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgvClientesLite.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvClientesLite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientesLite.Location = new System.Drawing.Point(12, 52);
             this.dgvClientesLite.Name = "dgvClientesLite";
@@ -50,7 +62,7 @@
             // 
             // txtBusquedaCliente
             // 
-            this.txtBusquedaCliente.Location = new System.Drawing.Point(114, 26);
+            this.txtBusquedaCliente.Location = new System.Drawing.Point(73, 26);
             this.txtBusquedaCliente.Name = "txtBusquedaCliente";
             this.txtBusquedaCliente.Size = new System.Drawing.Size(100, 20);
             this.txtBusquedaCliente.TabIndex = 1;
@@ -95,11 +107,21 @@
             this.btnCompleto.UseVisualStyleBackColor = true;
             this.btnCompleto.Click += new System.EventHandler(this.btnCompleto_Click);
             // 
+            // lblBusqueda
+            // 
+            this.lblBusqueda.AutoSize = true;
+            this.lblBusqueda.Location = new System.Drawing.Point(12, 26);
+            this.lblBusqueda.Name = "lblBusqueda";
+            this.lblBusqueda.Size = new System.Drawing.Size(55, 13);
+            this.lblBusqueda.TabIndex = 6;
+            this.lblBusqueda.Text = "Busqueda";
+            // 
             // ListarClientesLite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 244);
+            this.Controls.Add(this.lblBusqueda);
             this.Controls.Add(this.btnCompleto);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnModificar);
@@ -123,5 +145,6 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnCompleto;
+        private System.Windows.Forms.Label lblBusqueda;
     }
 }

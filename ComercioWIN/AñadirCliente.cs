@@ -68,15 +68,15 @@ namespace ComercioWIN
                 if (ClienteLocal == null)
                     ClienteLocal = new Cliente();
 
-                ClienteLocal.Nombre = txtNombre.Text;
+                ClienteLocal.Nombre = txtNombre.Text.ToUpper();
                 ClienteLocal.Cuit = txtCuit.Text;
-                ClienteLocal.Direccion = txtDireccion.Text;
+                ClienteLocal.Direccion = txtDireccion.Text.ToUpper();
                 ClienteLocal.CP = int.Parse(txtCP.Text);
                 ClienteLocal.Provincia = (Provincia)cboProvincia.SelectedItem;
                 ClienteLocal.Telefono = txtTelefono.Text;
-                ClienteLocal.Email = txtEmail.Text;
+                ClienteLocal.Email = txtEmail.Text.ToUpper();
                 ClienteLocal.contribuyente = (Contribuyente)cboContribuyente.SelectedItem;
-                ClienteLocal.Observaciones = txtObservaciones.Text;
+                ClienteLocal.Observaciones = txtObservaciones.Text.ToUpper();
                 ClienteLocal.estado = ckbActivo.Checked;
 
             

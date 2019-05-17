@@ -93,7 +93,7 @@ namespace ComercioWIN
                 if(txtBusquedaCliente.Text.Length >=2)
                 {
                     List<Cliente> lista;
-                    lista = ListaClienteLocal.FindAll(X => X.Nombre.Contains(txtBusquedaCliente.Text));
+                    lista = ListaClienteLocal.FindAll(X => X.Nombre.ToUpper().Contains(txtBusquedaCliente.Text.ToUpper()));
                     dgvClientesLite.DataSource = lista;
                 }
            
