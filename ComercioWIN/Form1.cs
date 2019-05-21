@@ -32,7 +32,8 @@ namespace ComercioWIN
 
         private void btnListarProvincias_Click(object sender, EventArgs e)
         {
-            ListarProvincias frm = new ListarProvincias();
+            
+            ListarArticulos frm = new ListarArticulos();
             frm.Show();
             
         }
