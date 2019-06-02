@@ -260,21 +260,21 @@
             // 
             // btnListarProvincias
             // 
-            this.btnListarProvincias.Location = new System.Drawing.Point(419, 117);
+            this.btnListarProvincias.Location = new System.Drawing.Point(143, 58);
             this.btnListarProvincias.Name = "btnListarProvincias";
-            this.btnListarProvincias.Size = new System.Drawing.Size(98, 58);
+            this.btnListarProvincias.Size = new System.Drawing.Size(77, 58);
             this.btnListarProvincias.TabIndex = 3;
-            this.btnListarProvincias.Text = "LISTAR TABLA PROVINCIAS";
+            this.btnListarProvincias.Text = "Articulos";
             this.btnListarProvincias.UseVisualStyleBackColor = true;
             this.btnListarProvincias.Click += new System.EventHandler(this.btnListarProvincias_Click);
             // 
             // btnListarClientes
             // 
-            this.btnListarClientes.Location = new System.Drawing.Point(243, 117);
+            this.btnListarClientes.Location = new System.Drawing.Point(43, 58);
             this.btnListarClientes.Name = "btnListarClientes";
             this.btnListarClientes.Size = new System.Drawing.Size(75, 58);
             this.btnListarClientes.TabIndex = 4;
-            this.btnListarClientes.Text = "LISTAR CLIENTES";
+            this.btnListarClientes.Text = "Clientes";
             this.btnListarClientes.UseVisualStyleBackColor = true;
             this.btnListarClientes.Click += new System.EventHandler(this.btnListarClientes_Click);
             // 
@@ -288,6 +288,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

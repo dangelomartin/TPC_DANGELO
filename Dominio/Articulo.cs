@@ -10,7 +10,7 @@ namespace Dominio
     {
         public int id { set; get; }
         public string Descripcion1 { set; get; }
-        public string Descripcion2 { set; get; }
+        //blic string Descripcion2 { set; get; }
         public long codBarras { set; get; }
         public int StockMin { set; get; }
         public int StockMax { set; get; }
@@ -25,6 +25,7 @@ namespace Dominio
         public Rubro Rubro { set; get; }
         public Proveedor Proveedor { set; get; }
         public bool estado { set; get; }
+        public decimal PrecioPublico { set; get; }
 
     }
 }

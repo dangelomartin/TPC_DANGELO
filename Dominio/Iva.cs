@@ -10,7 +10,7 @@ namespace Dominio
     {
         public int id { set; get; }
         public string Descripcion { set; get; }
-        public float Porcentaje { set; get; }
+        public decimal Porcentaje { set; get; }
         public override string ToString()
         {
             return Descripcion;

@@ -8,7 +8,7 @@ namespace Dominio
 {
     public class Rubro
     {
-        public string id { set; get; }
+        public int id { set; get; }
         public string Descripcion { set; get; }
         public override string ToString()
         {

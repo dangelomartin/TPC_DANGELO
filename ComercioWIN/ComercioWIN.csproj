@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AñadirArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AñadirArticulo.Designer.cs">
+      <DependentUpon>AñadirArticulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="AñadirCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AñadirCliente.Designer.cs">
       <DependentUpon>AñadirCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompletoArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompletoArticulo.Designer.cs">
+      <DependentUpon>CompletoArticulo.cs</DependentUpon>
     </Compile>
     <Compile Include="CompletoCliente.cs">
       <SubType>Form</SubType>
@@ -70,17 +82,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListarArticulos.cs">
+    <Compile Include="ListarArticulosLite.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListarArticulos.Designer.cs">
-      <DependentUpon>ListarArticulos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ListarClientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListarClientes.Designer.cs">
-      <DependentUpon>ListarClientes.cs</DependentUpon>
+    <Compile Include="ListarArticulosLite.Designer.cs">
+      <DependentUpon>ListarArticulosLite.cs</DependentUpon>
     </Compile>
     <Compile Include="ListarClientesLite.cs">
       <SubType>Form</SubType>
@@ -94,10 +100,22 @@
     <Compile Include="ListarProvincias.Designer.cs">
       <DependentUpon>ListarProvincias.cs</DependentUpon>
     </Compile>
+    <Compile Include="Precaucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Precaucion.Designer.cs">
+      <DependentUpon>Precaucion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AñadirArticulo.resx">
+      <DependentUpon>AñadirArticulo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AñadirCliente.resx">
       <DependentUpon>AñadirCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompletoArticulo.resx">
+      <DependentUpon>CompletoArticulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CompletoCliente.resx">
       <DependentUpon>CompletoCliente.cs</DependentUpon>
@@ -108,17 +126,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListarArticulos.resx">
-      <DependentUpon>ListarArticulos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListarClientes.resx">
-      <DependentUpon>ListarClientes.cs</DependentUpon>
+    <EmbeddedResource Include="ListarArticulosLite.resx">
+      <DependentUpon>ListarArticulosLite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListarClientesLite.resx">
       <DependentUpon>ListarClientesLite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListarProvincias.resx">
       <DependentUpon>ListarProvincias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Precaucion.resx">
+      <DependentUpon>Precaucion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -143,6 +161,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AccesoaDatos\AccesoaDatos.csproj">
+      <Project>{1a340ce5-49cb-4e0b-98ae-23c70947e79c}</Project>
+      <Name>AccesoaDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Dominio\Dominio.csproj">
       <Project>{b4331ceb-7129-4255-ab74-1b3e60c8ae0e}</Project>
       <Name>Dominio</Name>

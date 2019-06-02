@@ -11,7 +11,7 @@ namespace Dominio
         public int id { set; get; }
         public string Nombre { set; get; }
         public string Direccion { set; get; }
-        Provincia Provincia { set; get; }
+        public Provincia Provincia { set; get; }
         public int CP { set; get; }
         public string Telefono { set; get; }
         public Contribuyente Contribuyente { set; get; }

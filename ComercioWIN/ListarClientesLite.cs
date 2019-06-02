@@ -131,5 +131,23 @@ namespace ComercioWIN
             completo.ShowDialog();
             CargarLista();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            
+            Precaucion precaucion = new Precaucion();
+            precaucion.ShowDialog();
+
+            if(precaucion.DialogResult == DialogResult.OK)
+            {
+                ClienteNegocio baja = new ClienteNegocio();
+                baja.Bajacliente((Cliente)dgvClientesLite.CurrentRow.DataBoundItem);
+            CargarLista();
+            }
+
+            
+           
+        }
     }
 }

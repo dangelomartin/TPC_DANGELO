@@ -24,7 +24,7 @@ namespace Negocio
             {
                 conexion.ConnectionString = AccesoDatos.AccesoDatosMaster.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select c.id,c.nombre,c.direccion,c.cp,p.nombre as Provincia,c.telefono,c.email,con.descripcion as CondicionIva,c.cuit,c.observaciones,c.estado from clientes c, provincias p, CONTRIBUYENTES con where c.idprovincia=p.id and con.ID=c.IDCONTRIBUYENTE";
+                comando.CommandText = "select c.id,c.nombre,c.direccion,c.cp,p.nombre as Provincia,c.telefono,c.email,con.descripcion as CondicionIva,c.cuit,c.observaciones,c.estado from clientes c, provincias p, CONTRIBUYENTES con where c.idprovincia=p.id and con.ID=c.IDCONTRIBUYENTE and estado=1";
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -47,8 +47,10 @@ namespace Negocio
                     nuevo.Provincia.Nombre = lector["Provincia"].ToString();
                     nuevo.contribuyente = new Contribuyente();
                     nuevo.contribuyente.Descripcion = lector["CondicionIva"].ToString();
+                    
+                    
                     /*
-                
+                    
 
 
                     /*nuevo.Nombre = lector.GetString(1);
@@ -117,7 +119,7 @@ namespace Negocio
             try
             {
                 
-                accesoDatos.setearConsulta("update Clientes Set Nombre=@Nombre, direccion=@direccion, cp=@cp, idprovincia=@idprov, telefono=@telefono, email=@email, idcontribuyente=@idcont,cuit=@cuit,observaciones=@obs where Id=" + modificar.id.ToString());
+                accesoDatos.setearConsulta("update Clientes Set Nombre=@Nombre, direccion=@direccion, cp=@cp, idprovincia=@idprov, telefono=@telefono, email=@email, idcontribuyente=@idcont,cuit=@cuit,observaciones=@obs,estado=@estado where Id=" + modificar.id.ToString());
                 accesoDatos.Comando.Parameters.Clear();
                 
                 accesoDatos.Comando.Parameters.AddWithValue("@Nombre", modificar.Nombre);
@@ -129,6 +131,7 @@ namespace Negocio
                 accesoDatos.Comando.Parameters.AddWithValue("@idcont", modificar.contribuyente.id);
                 accesoDatos.Comando.Parameters.AddWithValue("@cuit", modificar.Cuit);
                 accesoDatos.Comando.Parameters.AddWithValue("@obs", modificar.Observaciones);
+                accesoDatos.Comando.Parameters.AddWithValue("@estado", modificar.estado);
                 accesoDatos.abrirConexion();
                 accesoDatos.ejecutarAccion();
 
@@ -142,6 +145,27 @@ namespace Negocio
                 accesoDatos.cerrarConexion();
             }
         }
+
+        public void Bajacliente(Cliente modificar)
+        {
+            AccesoDatos.AccesoDatosMaster accesoDatos = new AccesoDatos.AccesoDatosMaster();
+            try
+            {
+                accesoDatos.setearConsulta("update Clientes Set estado='0' where Id=" + modificar.id.ToString());
+                accesoDatos.Comando.Parameters.Clear();
+                accesoDatos.abrirConexion();
+                accesoDatos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+        }
+
     }
     
     

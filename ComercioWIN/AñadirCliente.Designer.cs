@@ -81,7 +81,7 @@
             // 
             this.txtCP.Location = new System.Drawing.Point(130, 104);
             this.txtCP.Name = "txtCP";
-            this.txtCP.Size = new System.Drawing.Size(243, 20);
+            this.txtCP.Size = new System.Drawing.Size(89, 20);
             this.txtCP.TabIndex = 7;
             // 
             // lblCP
@@ -194,6 +194,8 @@
             // ckbActivo
             // 
             this.ckbActivo.AutoSize = true;
+            this.ckbActivo.Checked = true;
+            this.ckbActivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckbActivo.Location = new System.Drawing.Point(130, 264);
             this.ckbActivo.Name = "ckbActivo";
             this.ckbActivo.Size = new System.Drawing.Size(56, 17);

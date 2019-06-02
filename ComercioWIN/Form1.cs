@@ -19,8 +19,8 @@ namespace ComercioWIN
 
         private void consultarClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListarClientes frm = new ListarClientes();
-            frm.Show();
+            //ListarClientes frm = new ListarClientes();
+            //frm.Show();
             
         }
 
@@ -33,9 +33,14 @@ namespace ComercioWIN
         private void btnListarProvincias_Click(object sender, EventArgs e)
         {
             
-            ListarArticulos frm = new ListarArticulos();
+            ListarArticulosLite frm = new ListarArticulosLite();
             frm.Show();
             
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
