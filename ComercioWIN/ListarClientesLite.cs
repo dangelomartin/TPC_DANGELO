@@ -14,6 +14,8 @@ namespace ComercioWIN
 {
     public partial class ListarClientesLite : Form
     {
+
+        public bool estadoventana = false;
         public List<Cliente> ListaClienteLocal;
         public ListarClientesLite()
         {
@@ -22,6 +24,10 @@ namespace ComercioWIN
 
         private void ListarClientesLite_Load(object sender, EventArgs e)
         {
+            if (estadoventana == false)
+            {
+                btnBuscar.Enabled = false;
+            }
             ClienteNegocio negocio = new ClienteNegocio();
 
             try
@@ -148,6 +154,49 @@ namespace ComercioWIN
 
             
            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        Cliente clienteLocal = new Cliente();
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (null == this.dgvClientesLite.CurrentRow)
+            {
+                clienteLocal = null;
+            }
+            else
+            {
+                clienteLocal = (Cliente)this.dgvClientesLite.CurrentRow.DataBoundItem;
+            }
+            this.Close();
+        }
+        public Cliente ClienteSelect(bool estado)
+        {
+            estadoventana = estado;
+            try
+            {
+                this.ShowDialog();
+                while(clienteLocal== null)
+                {
+                    this.ShowDialog();
+                }
+                return clienteLocal;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void dgvClientesLite_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

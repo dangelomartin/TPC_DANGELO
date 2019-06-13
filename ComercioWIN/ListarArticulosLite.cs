@@ -14,14 +14,20 @@ namespace ComercioWIN
 {
     public partial class ListarArticulosLite : Form
     {
+        public bool estadoventana = false;
         public List<Articulo> ListArticuloLocal;
         public ListarArticulosLite()
+        
         {
             InitializeComponent();
         }
 
         private void ListarArticulos_Load(object sender, EventArgs e)
         {
+            if(estadoventana == false)
+            {
+                btnCerrar.Enabled = false;
+            }
             ArticuloNegocio negocio = new ArticuloNegocio();
             try
             {
@@ -53,12 +59,7 @@ namespace ComercioWIN
                 dgvListarArticulos.Columns[11].Visible = false;
                 dgvListarArticulos.Columns[14].Visible = false;
                 dgvListarArticulos.Columns[15].Visible = false;
-                
-
-
-
-
-
+                dgvListarArticulos.Columns[16].Visible = false;
 
             }
             catch (Exception ex)
@@ -107,6 +108,38 @@ namespace ComercioWIN
                 MessageBox.Show(ex.ToString());
             }
         }
-    }
 
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            if (null == this.dgvListarArticulos.CurrentRow)
+            {
+                ArticuloLocal = null;
+            }
+            else
+            {
+                ArticuloLocal = (Articulo)this.dgvListarArticulos.CurrentRow.DataBoundItem;
+            }
+            this.Close();
+        }
+
+        public Articulo ArticuloLocal = new Articulo();
+
+        public Articulo ArtSelect(bool estado)
+        {
+            estadoventana = estado;
+            try
+            {
+                this.ShowDialog();
+                while (ArticuloLocal == null)
+                {
+                    this.ShowDialog();
+                }
+                return ArticuloLocal;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+    }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListarClientesLite));
             this.dgvClientesLite = new System.Windows.Forms.DataGridView();
             this.txtBusquedaCliente = new System.Windows.Forms.TextBox();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
@@ -36,6 +37,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnCompleto = new System.Windows.Forms.Button();
             this.lblBusqueda = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientesLite)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,71 +59,96 @@
             this.dgvClientesLite.Location = new System.Drawing.Point(12, 52);
             this.dgvClientesLite.Name = "dgvClientesLite";
             this.dgvClientesLite.ReadOnly = true;
-            this.dgvClientesLite.Size = new System.Drawing.Size(421, 167);
+            this.dgvClientesLite.RowHeadersVisible = false;
+            this.dgvClientesLite.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvClientesLite.Size = new System.Drawing.Size(482, 197);
             this.dgvClientesLite.TabIndex = 0;
+            this.dgvClientesLite.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientesLite_CellContentClick);
             // 
             // txtBusquedaCliente
             // 
-            this.txtBusquedaCliente.Location = new System.Drawing.Point(73, 26);
+            this.txtBusquedaCliente.Location = new System.Drawing.Point(12, 21);
             this.txtBusquedaCliente.Name = "txtBusquedaCliente";
-            this.txtBusquedaCliente.Size = new System.Drawing.Size(100, 20);
+            this.txtBusquedaCliente.Size = new System.Drawing.Size(161, 20);
             this.txtBusquedaCliente.TabIndex = 1;
             this.txtBusquedaCliente.TextChanged += new System.EventHandler(this.txtBusquedaCliente_TextChanged);
             // 
             // btnAgregarCliente
             // 
-            this.btnAgregarCliente.Location = new System.Drawing.Point(454, 158);
+            this.btnAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarCliente.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAgregarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCliente.Image")));
+            this.btnAgregarCliente.Location = new System.Drawing.Point(505, 1);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
-            this.btnAgregarCliente.Size = new System.Drawing.Size(117, 31);
+            this.btnAgregarCliente.Size = new System.Drawing.Size(56, 61);
             this.btnAgregarCliente.TabIndex = 2;
-            this.btnAgregarCliente.Text = "Agregar";
             this.btnAgregarCliente.UseVisualStyleBackColor = true;
             this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(454, 120);
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.Location = new System.Drawing.Point(505, 135);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(117, 32);
+            this.btnModificar.Size = new System.Drawing.Size(56, 61);
             this.btnModificar.TabIndex = 3;
-            this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(454, 84);
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(505, 68);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 30);
+            this.button2.Size = new System.Drawing.Size(56, 61);
             this.button2.TabIndex = 4;
-            this.button2.Text = "Eliminar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnCompleto
             // 
-            this.btnCompleto.Location = new System.Drawing.Point(454, 48);
+            this.btnCompleto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompleto.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCompleto.Image = ((System.Drawing.Image)(resources.GetObject("btnCompleto.Image")));
+            this.btnCompleto.Location = new System.Drawing.Point(505, 202);
             this.btnCompleto.Name = "btnCompleto";
-            this.btnCompleto.Size = new System.Drawing.Size(117, 30);
+            this.btnCompleto.Size = new System.Drawing.Size(56, 61);
             this.btnCompleto.TabIndex = 5;
-            this.btnCompleto.Text = "Ver Todos Los Datos";
             this.btnCompleto.UseVisualStyleBackColor = true;
             this.btnCompleto.Click += new System.EventHandler(this.btnCompleto_Click);
             // 
             // lblBusqueda
             // 
-            this.lblBusqueda.AutoSize = true;
-            this.lblBusqueda.Location = new System.Drawing.Point(12, 26);
+            this.lblBusqueda.Image = ((System.Drawing.Image)(resources.GetObject("lblBusqueda.Image")));
+            this.lblBusqueda.Location = new System.Drawing.Point(174, 7);
             this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(55, 13);
-            this.lblBusqueda.TabIndex = 6;
-            this.lblBusqueda.Text = "Busqueda";
+            this.lblBusqueda.Size = new System.Drawing.Size(30, 40);
+            this.lblBusqueda.TabIndex = 8;
+            this.lblBusqueda.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.Location = new System.Drawing.Point(234, 255);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(51, 51);
+            this.btnBuscar.TabIndex = 9;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.button1_Click);
             // 
             // ListarClientesLite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 244);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(564, 317);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblBusqueda);
             this.Controls.Add(this.btnCompleto);
             this.Controls.Add(this.button2);
@@ -147,5 +174,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnCompleto;
         private System.Windows.Forms.Label lblBusqueda;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

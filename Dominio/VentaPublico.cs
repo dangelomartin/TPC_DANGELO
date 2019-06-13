@@ -14,5 +14,5 @@ namespace Dominio
         public float Descuento4 { set; get; }
         public int Ganancia { set; get; }
         public Iva Iva { set; get; }
-            }
+    }
 }

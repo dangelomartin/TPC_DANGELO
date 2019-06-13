@@ -9,7 +9,7 @@ using AccesoDatos;
 
 namespace Negocio
 {
-   public class MarcaNegocio
+    public class MarcaNegocio
     {
         public List<Marca> ListarMarcas()
         {
@@ -46,5 +46,77 @@ namespace Negocio
                 conexion.Close();
             }
         }
-    }
+
+        public void Baja(Marca baja)
+        {
+            AccesoDatos.AccesoDatosMaster accesoDatos = new AccesoDatos.AccesoDatosMaster();
+            try
+            {
+                accesoDatos.setearConsulta("update Marcas Set estado='0' where Id=" + baja.id.ToString());
+                accesoDatos.Comando.Parameters.Clear();
+                accesoDatos.abrirConexion();
+                accesoDatos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+        }
+        public void ModificarMarca(Marca modificar)
+        {
+            AccesoDatos.AccesoDatosMaster accesoDatos = new AccesoDatos.AccesoDatosMaster();
+            try
+            {
+
+                accesoDatos.setearConsulta("update Marcas Set Descripcion=@Descripcion where Id=" + modificar.id.ToString());
+                accesoDatos.Comando.Parameters.Clear();
+
+                accesoDatos.Comando.Parameters.AddWithValue("@Descripcion", modificar.Descripcion);
+                
+          
+                accesoDatos.abrirConexion();
+                accesoDatos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+        }
+
+        public void AgregaMarca(Marca nuevo)
+
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                conexion.ConnectionString = AccesoDatos.AccesoDatosMaster.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "insert into Marcas (Descripcion,estado) values";
+                comando.CommandText += "('" + nuevo.Descripcion + "', '" + nuevo.estado + "')";
+                comando.Connection = conexion;
+                conexion.Open();
+
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+    }   
 }

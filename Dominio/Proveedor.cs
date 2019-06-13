@@ -17,6 +17,8 @@ namespace Dominio
         public Contribuyente Contribuyente { set; get; }
         public string Cuit { set; get; }
         public string Contacto { set; get; }
+        public string email { set; get; }
+        public bool estado { set; get; }
         public override string ToString()
         {
             return Nombre;

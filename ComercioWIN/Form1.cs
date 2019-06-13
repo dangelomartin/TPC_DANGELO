@@ -27,20 +27,63 @@ namespace ComercioWIN
         private void btnListarClientes_Click(object sender, EventArgs e)
         {
             ListarClientesLite frm = new ListarClientesLite();
-            frm.Show();
+            frm.ShowDialog();
         }
 
         private void btnListarProvincias_Click(object sender, EventArgs e)
         {
             
             ListarArticulosLite frm = new ListarArticulosLite();
-            frm.Show();
+            frm.ShowDialog();
             
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Factura frmfactura = new Factura();
+            frmfactura.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ListarRubro frmRubro = new ListarRubro();
+            frmRubro.ShowDialog();
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ListarProveedores frmproveedores = new ListarProveedores();
+            frmproveedores.ShowDialog();
+        }
+
+        private void btnMarca_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnCargarFactura_Click(object sender, EventArgs e)
+        {
+            CargarFactura frm = new CargarFactura();
+            frm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Factura2 frmfac = new Factura2();
+            frmfac.ShowDialog();
+           
+        }
+
+        private void btnFactura_Click(object sender, EventArgs e)
+        {
+            Factura frmfactura = new Factura();
+            frmfactura.ShowDialog();
         }
     }
 }

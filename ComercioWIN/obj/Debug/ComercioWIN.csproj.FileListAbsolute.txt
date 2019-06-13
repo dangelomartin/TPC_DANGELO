@@ -24,3 +24,13 @@ C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.ListarAr
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.Precaucion.resources
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.AñadirArticulo.resources
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.CompletoArticulo.resources
+C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.CargarFactura.resources
+C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.Compras.resources
+C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.Factura.resources
+C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.ListarProveedores.resources
+C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.CompletoProveedor.resources
+C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.AñadirProveedor.resources
+C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.ListarRubro.resources
+C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.AñadirRubro.resources
+C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.AñadirMarca.resources
+C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.Factura2.resources

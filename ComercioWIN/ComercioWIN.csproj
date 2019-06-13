@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AñadirMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AñadirMarca.Designer.cs">
+      <DependentUpon>AñadirMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AñadirRubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AñadirRubro.Designer.cs">
+      <DependentUpon>AñadirRubro.cs</DependentUpon>
+    </Compile>
     <Compile Include="AñadirArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +70,18 @@
     <Compile Include="AñadirCliente.Designer.cs">
       <DependentUpon>AñadirCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="AñadirProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AñadirProveedor.Designer.cs">
+      <DependentUpon>AñadirProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CargarFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CargarFactura.Designer.cs">
+      <DependentUpon>CargarFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="CompletoArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +93,30 @@
     </Compile>
     <Compile Include="CompletoCliente.Designer.cs">
       <DependentUpon>CompletoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompletoProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompletoProveedor.Designer.cs">
+      <DependentUpon>CompletoProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras.Designer.cs">
+      <DependentUpon>Compras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Factura.Designer.cs">
+      <DependentUpon>Factura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factura2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Factura2.Designer.cs">
+      <DependentUpon>Factura2.cs</DependentUpon>
     </Compile>
     <Compile Include="Facturacompra.cs">
       <SubType>Form</SubType>
@@ -94,11 +142,29 @@
     <Compile Include="ListarClientesLite.Designer.cs">
       <DependentUpon>ListarClientesLite.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListarMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarMarcas.Designer.cs">
+      <DependentUpon>ListarMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListarProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarProveedores.Designer.cs">
+      <DependentUpon>ListarProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListarProvincias.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ListarProvincias.Designer.cs">
       <DependentUpon>ListarProvincias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListarRubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarRubro.Designer.cs">
+      <DependentUpon>ListarRubro.cs</DependentUpon>
     </Compile>
     <Compile Include="Precaucion.cs">
       <SubType>Form</SubType>
@@ -108,17 +174,41 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AñadirMarca.resx">
+      <DependentUpon>AñadirMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AñadirRubro.resx">
+      <DependentUpon>AñadirRubro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AñadirArticulo.resx">
       <DependentUpon>AñadirArticulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AñadirCliente.resx">
       <DependentUpon>AñadirCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AñadirProveedor.resx">
+      <DependentUpon>AñadirProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CargarFactura.resx">
+      <DependentUpon>CargarFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CompletoArticulo.resx">
       <DependentUpon>CompletoArticulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CompletoCliente.resx">
       <DependentUpon>CompletoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompletoProveedor.resx">
+      <DependentUpon>CompletoProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras.resx">
+      <DependentUpon>Compras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Factura.resx">
+      <DependentUpon>Factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Factura2.resx">
+      <DependentUpon>Factura2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacompra.resx">
       <DependentUpon>Facturacompra.cs</DependentUpon>
@@ -132,8 +222,14 @@
     <EmbeddedResource Include="ListarClientesLite.resx">
       <DependentUpon>ListarClientesLite.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListarProveedores.resx">
+      <DependentUpon>ListarProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListarProvincias.resx">
       <DependentUpon>ListarProvincias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarRubro.resx">
+      <DependentUpon>ListarRubro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Precaucion.resx">
       <DependentUpon>Precaucion.cs</DependentUpon>

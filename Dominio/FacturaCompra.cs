@@ -20,7 +20,7 @@ namespace Dominio
         public float PercGan;
         public float NoGraba;
         public float PercIva;
-        Fecha fecha;
+        public Fecha fecha;
         public Proveedor proveedor;
         
     }
