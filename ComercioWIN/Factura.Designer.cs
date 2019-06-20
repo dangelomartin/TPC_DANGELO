@@ -39,6 +39,7 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtDescri = new System.Windows.Forms.TextBox();
             this.btnFinalizar = new System.Windows.Forms.Button();
+            this.txtNumFactura = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleArticulo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,7 +97,7 @@
             this.dgvDetalleArticulo.AllowUserToAddRows = false;
             this.dgvDetalleArticulo.AllowUserToDeleteRows = false;
             this.dgvDetalleArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetalleArticulo.Location = new System.Drawing.Point(22, 111);
+            this.dgvDetalleArticulo.Location = new System.Drawing.Point(22, 155);
             this.dgvDetalleArticulo.Name = "dgvDetalleArticulo";
             this.dgvDetalleArticulo.ReadOnly = true;
             this.dgvDetalleArticulo.Size = new System.Drawing.Size(726, 150);
@@ -138,11 +139,19 @@
             this.btnFinalizar.UseVisualStyleBackColor = true;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
+            // txtNumFactura
+            // 
+            this.txtNumFactura.Location = new System.Drawing.Point(329, 117);
+            this.txtNumFactura.Name = "txtNumFactura";
+            this.txtNumFactura.Size = new System.Drawing.Size(100, 20);
+            this.txtNumFactura.TabIndex = 12;
+            // 
             // Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtNumFactura);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.txtDescri);
             this.Controls.Add(this.txtCodigo);
@@ -176,5 +185,6 @@
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtDescri;
         private System.Windows.Forms.Button btnFinalizar;
+        private System.Windows.Forms.TextBox txtNumFactura;
     }
 }

@@ -42,6 +42,11 @@ namespace Dominio
                 precio = costo * descuento1 * descuento2 * descuento3 * descuento4 * ganancia;
                 return precio;
             }
+            set
+            {
+                PrecioPublico = this.PrecioPublico;
+            }
+            
         }
 
     }

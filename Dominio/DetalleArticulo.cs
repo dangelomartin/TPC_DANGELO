@@ -10,13 +10,8 @@ namespace Dominio
     {
         public decimal cantidad { set; get; }
         public Articulo articulo { set; get; }
-        public decimal preciounit
-        {
-            get
-            {
-                return articulo.PrecioPublico;
-            }
-        }
+        public decimal preciounit { set; get; }
+        
         public decimal total
             {   get
                 {
@@ -24,9 +19,13 @@ namespace Dominio
                     tot = cantidad * articulo.PrecioPublico;
                     return tot;
                 }
+                set
+            {
+
+            }
             
             }
-        public int id { set; get; }
+        public int idfactura { set; get; }
         
     }
 }

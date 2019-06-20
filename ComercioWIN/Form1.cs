@@ -75,8 +75,7 @@ namespace ComercioWIN
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Factura2 frmfac = new Factura2();
-            frmfac.ShowDialog();
+            
            
         }
 

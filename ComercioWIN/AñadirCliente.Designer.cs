@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AñadirCliente));
             this.lblCuit = new System.Windows.Forms.Label();
             this.txtCuit = new System.Windows.Forms.TextBox();
             this.lblProvincia = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             this.cboProvincia = new System.Windows.Forms.ComboBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnXCuit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCuit
@@ -239,11 +241,25 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // btnXCuit
+            // 
+            this.btnXCuit.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnXCuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXCuit.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnXCuit.Image = ((System.Drawing.Image)(resources.GetObject("btnXCuit.Image")));
+            this.btnXCuit.Location = new System.Drawing.Point(269, 21);
+            this.btnXCuit.Name = "btnXCuit";
+            this.btnXCuit.Size = new System.Drawing.Size(29, 23);
+            this.btnXCuit.TabIndex = 29;
+            this.btnXCuit.UseVisualStyleBackColor = false;
+            // 
             // AñadirCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 337);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(413, 337);
+            this.Controls.Add(this.btnXCuit);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.cboProvincia);
@@ -298,5 +314,6 @@
         private System.Windows.Forms.ComboBox cboProvincia;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnXCuit;
     }
 }

@@ -10,7 +10,7 @@ namespace Dominio
     {
         public int idcliente { set; get; }
         public int idfact { set; get; }
-        public int numFact { set; get; }
+//        public int numFact { set; get; }
         public List<DetalleArticulo> DetalleArticulos { set; get; } 
  
 

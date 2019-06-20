@@ -112,12 +112,6 @@
     <Compile Include="Factura.Designer.cs">
       <DependentUpon>Factura.cs</DependentUpon>
     </Compile>
-    <Compile Include="Factura2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Factura2.Designer.cs">
-      <DependentUpon>Factura2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Facturacompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,9 +200,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Factura.resx">
       <DependentUpon>Factura.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Factura2.resx">
-      <DependentUpon>Factura2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacompra.resx">
       <DependentUpon>Facturacompra.cs</DependentUpon>

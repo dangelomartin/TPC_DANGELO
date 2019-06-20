@@ -32,6 +32,7 @@ namespace ComercioWIN
         }
         Articulo ArtAgregar = new Articulo();
         Cliente clienteLocal = new Cliente();
+        
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             ListarClientesLite BuscarCliente = new ListarClientesLite();
@@ -125,7 +126,26 @@ namespace ComercioWIN
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
+            DetalleArticulo ArticuloVendido = new DetalleArticulo();
+            DetalleVentaNegocio negocio = new DetalleVentaNegocio();
+            FacturaVenta factura = new FacturaVenta();
+            
 
+            factura.idcliente = clienteLocal.id;
+            factura.idfact = negocio.NumFactura();
+            negocio.AgregarVenta(factura);
+
+            foreach (DataGridViewRow row3 in dgvDetalleArticulo.Rows)
+            {
+                ArticuloVendido.articulo = new Articulo();
+                ArticuloVendido.articulo.id = Convert.ToInt32(row3.Cells["Cod"].Value);
+                ArticuloVendido.preciounit = Convert.ToDecimal(row3.Cells["Precio uni"].Value);
+                ArticuloVendido.cantidad = Convert.ToDecimal(row3.Cells["Cantidad"].Value);
+                ArticuloVendido.idfactura = factura.idfact;
+                //ArticuloVendido.total = decimal.Parse(txtFinal.Text);
+                negocio.AgregarArticulo(ArticuloVendido, factura.idfact);
+                
+            }
         }
     }
 }

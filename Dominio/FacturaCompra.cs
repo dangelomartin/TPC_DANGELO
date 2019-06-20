@@ -9,7 +9,6 @@ namespace Dominio
     public class FacturaCompra
     {
 
-        public string Tipo;
         public int NumeroPuesto;
         public int NumeroComprobante;
         public float Total;

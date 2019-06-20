@@ -62,6 +62,15 @@ namespace ComercioWIN
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            bool todoOK = false;
+            if (txtNombre.Text.Trim() == string.Empty)
+            {
+
+                btnXCuit.Visible = true;
+                todoOK = true;
+
+            }
+
             ClienteNegocio negocio = new ClienteNegocio();
             try
             {
@@ -104,5 +113,7 @@ namespace ComercioWIN
         {
             Close();
         }
+
+        
     }
 }

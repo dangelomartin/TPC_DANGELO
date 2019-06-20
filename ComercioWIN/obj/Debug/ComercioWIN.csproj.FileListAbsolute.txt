@@ -33,4 +33,3 @@ C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.AñadirP
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.ListarRubro.resources
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.AñadirRubro.resources
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.AñadirMarca.resources
-C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.Factura2.resources

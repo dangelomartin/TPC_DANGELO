@@ -19,7 +19,7 @@ namespace ComercioWIN
         public CompletoArticulo()
         {
             InitializeComponent();
-        }
+        }   
         public CompletoArticulo(Articulo articulo)
         {
             InitializeComponent();
