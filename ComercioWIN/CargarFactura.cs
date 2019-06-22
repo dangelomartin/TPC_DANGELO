@@ -15,9 +15,18 @@ namespace ComercioWIN
     public partial class CargarFactura : Form
     {
         
+        private DataTable dt;
+        Articulo ArtAgregar = new Articulo();
+        FacturaCompra FacturaNueva = new FacturaCompra();
         public CargarFactura()
         {
             InitializeComponent();
+            dt = new DataTable();
+            dt.Columns.Add("Cantidad");
+            dt.Columns.Add("Cod");
+            dt.Columns.Add("Descripcion");
+            dgvDetalleArticulo.DataSource = dt;
+
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -48,6 +57,109 @@ namespace ComercioWIN
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void CargarFactura_Load(object sender, EventArgs e)
+        {
+            ArtAgregar = null;
+        }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            if (dgvDetalleArticulo.CurrentCell != null)
+            {
+                int rowIndex = dgvDetalleArticulo.CurrentCell.RowIndex;
+                dgvDetalleArticulo.Rows.RemoveAt(rowIndex);
+            }
+        }
+
+        private void btnAgregarArt_Click(object sender, EventArgs e)
+        {
+            ListarArticulosLite BuscarArt = new ListarArticulosLite();
+            ArtAgregar = BuscarArt.ArtSelect(true);
+            txtID.Text = ArtAgregar.id.ToString();
+            txtDescripcion.Text = ArtAgregar.Descripcion1;
+            txtCostoActual.Text = ArtAgregar.Costo.ToString();
+            
+        }
+
+        private void btnAñadirLista_Click(object sender, EventArgs e)
+        {
+            bool existe = false;
+            if (txtCantidad.Text == "")
+            {
+                lblIngrCant.Visible= true;
+                return;
+            }
+            if (txtID.Text == "" || txtID.Text == "0") 
+            {
+                lblSelecArt.Visible = true;
+                return;
+            }
+            if (ArtAgregar != null )
+            {
+                foreach (DataGridViewRow row2 in dgvDetalleArticulo.Rows)
+                {
+                    if (row2.Cells["Cod"].Value.ToString() == ArtAgregar.id.ToString())
+                    {
+                        row2.Cells["Cantidad"].Value = Convert.ToInt32(row2.Cells["Cantidad"].Value) + Convert.ToInt32(txtCantidad.Text.Replace(".", ","));
+                        row2.Cells["Descripcion"].Value = ArtAgregar.Descripcion1;
+                        existe = true;
+                    }
+                }
+                if (existe == false)
+                {
+                    dt.Rows.Add(txtCantidad.Text, ArtAgregar.id, ArtAgregar.Descripcion1);
+                }
+                lblIngrCant.Visible = false;
+                lblSelecArt.Visible = false;
+            }
+            else
+            {}
+            ArtAgregar = null;
+            txtCantidad.Text = "";
+            txtCostoActual.Text = "";
+            txtDescripcion.Text = "";
+            txtID.Text = "";
+
+        }
+
+        private void btnModificarCosto_Click(object sender, EventArgs e)
+        {
+            if(ArtAgregar!=null)
+            {
+            AñadirArticulo articulo = new AñadirArticulo(ArtAgregar);
+            articulo.ShowDialog();
+            }
+
+        }
+
+        private void txtCostoNuevo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            ComprasNegocio agregar = new ComprasNegocio();
+            if (proveedorLocal != null)
+            {
+             
+            }
+
+
+            agregar.AgregarCompra(FacturaNueva);
+
         }
     }
 }

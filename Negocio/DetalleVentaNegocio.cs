@@ -21,7 +21,7 @@ namespace Negocio
                 conexion.ConnectionString = AccesoDatos.AccesoDatosMaster.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "insert into DetalleArticulo (cantidad, idarticulo, PrecioUni, idfactura) values";
-                comando.CommandText += "('" + nuevo.cantidad + "', '" + nuevo.articulo.id + "', '" + nuevo.preciounit + "', '" + nuevo.idfactura + "')";
+                comando.CommandText += "(" + nuevo.cantidad.ToString().Replace(",", ".") + ", " + nuevo.articulo.id + ", '" + nuevo.preciounit.ToString().Replace(",",".") + "', " + nuevo.idfactura + ")";
                 comando.Connection = conexion;
                 conexion.Open();
 

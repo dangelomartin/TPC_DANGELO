@@ -35,7 +35,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnCargarFactura = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnFactura = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -61,7 +60,7 @@
             // 
             // btnMarca
             // 
-            this.btnMarca.Location = new System.Drawing.Point(277, 143);
+            this.btnMarca.Location = new System.Drawing.Point(279, 57);
             this.btnMarca.Name = "btnMarca";
             this.btnMarca.Size = new System.Drawing.Size(75, 23);
             this.btnMarca.TabIndex = 5;
@@ -71,7 +70,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(275, 111);
+            this.button2.Location = new System.Drawing.Point(279, 25);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
@@ -101,31 +100,21 @@
             // 
             // btnCargarFactura
             // 
-            this.btnCargarFactura.Location = new System.Drawing.Point(212, 214);
+            this.btnCargarFactura.Location = new System.Drawing.Point(196, 96);
             this.btnCargarFactura.Name = "btnCargarFactura";
-            this.btnCargarFactura.Size = new System.Drawing.Size(75, 23);
+            this.btnCargarFactura.Size = new System.Drawing.Size(158, 23);
             this.btnCargarFactura.TabIndex = 9;
-            this.btnCargarFactura.Text = "button1";
+            this.btnCargarFactura.Text = "Cargar Factura";
             this.btnCargarFactura.UseVisualStyleBackColor = true;
             this.btnCargarFactura.Click += new System.EventHandler(this.btnCargarFactura_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(528, 256);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // btnFactura
             // 
-            this.btnFactura.Location = new System.Drawing.Point(115, 278);
+            this.btnFactura.Location = new System.Drawing.Point(115, 96);
             this.btnFactura.Name = "btnFactura";
-            this.btnFactura.Size = new System.Drawing.Size(75, 23);
+            this.btnFactura.Size = new System.Drawing.Size(75, 53);
             this.btnFactura.TabIndex = 11;
-            this.btnFactura.Text = "Factura";
+            this.btnFactura.Text = "Facturar";
             this.btnFactura.UseVisualStyleBackColor = true;
             this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
             // 
@@ -135,7 +124,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnFactura);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCargarFactura);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -158,7 +146,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnCargarFactura;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnFactura;
     }
 }

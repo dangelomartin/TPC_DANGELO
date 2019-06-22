@@ -100,23 +100,11 @@
     <Compile Include="CompletoProveedor.Designer.cs">
       <DependentUpon>CompletoProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Compras.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Compras.Designer.cs">
-      <DependentUpon>Compras.cs</DependentUpon>
-    </Compile>
     <Compile Include="Factura.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Factura.Designer.cs">
       <DependentUpon>Factura.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Facturacompra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Facturacompra.Designer.cs">
-      <DependentUpon>Facturacompra.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -195,14 +183,8 @@
     <EmbeddedResource Include="CompletoProveedor.resx">
       <DependentUpon>CompletoProveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Compras.resx">
-      <DependentUpon>Compras.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Factura.resx">
       <DependentUpon>Factura.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Facturacompra.resx">
-      <DependentUpon>Facturacompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
