@@ -38,6 +38,85 @@ namespace Negocio
             }
         }
 
+        
+            public List<FacturaVenta> ListarVentas()
+            {
+                SqlConnection conexion = new SqlConnection();
+                SqlCommand comando = new SqlCommand();
+                SqlDataReader lector;
+                List<FacturaVenta> listado = new List<FacturaVenta>();
+                FacturaVenta nuevo;
+
+                try
+                {
+                    conexion.ConnectionString = AccesoDatosMaster.cadenaConexion;
+                    comando.CommandType = System.Data.CommandType.Text;
+                    comando.CommandText = "select d.idFactura as NumFactura, d.Fecha, c.nombre as Cliente, d.importe from DetalleVenta as d inner join CLIENTES as c on c.id=d.IdCliente";
+                    comando.Connection = conexion;
+                    conexion.Open();
+                    lector = comando.ExecuteReader();
+
+                    while (lector.Read())
+                    {
+                        nuevo = new FacturaVenta();
+                        nuevo.idfact = (int)lector["NumFactura"];
+                        nuevo.cliente = new Cliente();
+                        nuevo.cliente.Nombre = (string)lector["Cliente"];
+                        nuevo.fecha = (DateTime)lector["fecha"];
+                        nuevo.importe = (decimal)lector["importe"];
+                        listado.Add(nuevo);
+                    }
+                    return listado;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conexion.Close();
+                }
+            }
+        public List<FacturaVenta> VentasXfecha(string desde, string hasta)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            List<FacturaVenta> listado = new List<FacturaVenta>();
+            FacturaVenta nuevo;
+
+            try
+            {
+                conexion.ConnectionString = AccesoDatosMaster.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = string.Format("set dateformat dmy select d.idFactura as NumFactura, d.Fecha, c.nombre as Cliente, d.importe from DetalleVenta as d inner join CLIENTES as c on c.id=d.IdCliente where d.fecha BETWEEN '{0}' AND '{1}'", desde, hasta);
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    nuevo = new FacturaVenta();
+                    nuevo.idfact = (int)lector["NumFactura"];
+                    nuevo.cliente = new Cliente();
+                    nuevo.cliente.Nombre = (string)lector["Cliente"];
+                    nuevo.fecha = (DateTime)lector["fecha"];
+                    nuevo.importe = (decimal)lector["importe"];
+                    listado.Add(nuevo);
+                }
+                return listado;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
+
         public void AgregarVenta(FacturaVenta nuevo)
 
         {
@@ -47,8 +126,8 @@ namespace Negocio
             {
                 conexion.ConnectionString = AccesoDatos.AccesoDatosMaster.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "insert into Detalleventa (idfactura,idCliente) values";
-                comando.CommandText += "('" + nuevo.idfact.ToString() + "', '" + nuevo.idcliente.ToString() + "')";
+                comando.CommandText = "insert into Detalleventa (idfactura,idCliente,importe) values";
+                comando.CommandText += "(" + nuevo.idfact + ", " + nuevo.cliente.id.ToString() + ", '" + nuevo.importe.ToString().Replace(",", ".") +"')";
                 comando.Connection = conexion;
                 conexion.Open();
 

@@ -151,15 +151,38 @@ namespace ComercioWIN
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+
             ComprasNegocio agregar = new ComprasNegocio();
             if (proveedorLocal != null)
             {
-             
+                FacturaNueva.NumeroPuesto = txtPuesto.Text;
+                FacturaNueva.NumeroComprobante = txtComprobante.Text;
+                FacturaNueva.fecha = dtpFecha.Value.Date;
+                FacturaNueva.Total = txtMonto.Text.Replace(",",".");
+                FacturaNueva.proveedor = new Proveedor();
+                FacturaNueva.proveedor.id = proveedorLocal.id;
+
+                
+            }
+            if(agregar.NoExiste(FacturaNueva)==true)
+            {
+                agregar.AgregarCompra(FacturaNueva);
+            }else
+            {
+                Precaucion form = new Precaucion();
+                form.ShowDialog();
             }
 
 
-            agregar.AgregarCompra(FacturaNueva);
 
+        }
+
+        private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8 && e.KeyChar != 13 && e.KeyChar != '.' && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
         }
     }
 }

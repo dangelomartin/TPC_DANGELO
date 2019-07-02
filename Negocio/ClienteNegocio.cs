@@ -36,10 +36,8 @@ namespace Negocio
                     nuevo.Nombre = (string)lector["Nombre"];
                     nuevo.Direccion = (string)lector["direccion"];
                     nuevo.CP = (int)lector["cp"];
-                    
                     nuevo.Telefono = (string)lector["telefono"];
                     nuevo.Email = (string)lector["email"];
-                    
                     nuevo.Cuit = (string)lector["cuit"];
                     nuevo.Observaciones = (string)lector["observaciones"];
                     nuevo.estado = (bool)lector["estado"];
@@ -47,27 +45,57 @@ namespace Negocio
                     nuevo.Provincia.Nombre = lector["Provincia"].ToString();
                     nuevo.contribuyente = new Contribuyente();
                     nuevo.contribuyente.Descripcion = lector["CondicionIva"].ToString();
-                    
-                    
-                    /*
-                    
+                    listado.Add(nuevo);
+                }
+
+                return listado;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
 
 
-                    /*nuevo.Nombre = lector.GetString(1);
-                    nuevo.Direccion = lector.GetString(2);
-                    nuevo.CP = lector.GetInt32(3);              
-                    nuevo.Telefono = lector.GetString(5);
-                    nuevo.Email = lector.GetString(6);
-                    nuevo.Cuit = lector.GetString(8);
-                    nuevo.Observaciones = lector.GetString(9);
-                    */
+        }
 
+        public List<Cliente> BuscarClientes(string nombre)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            List<Cliente> listado = new List<Cliente>();
+            Cliente nuevo;
 
+            try
+            {
+                conexion.ConnectionString = AccesoDatos.AccesoDatosMaster.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = string.Format("select c.id,c.nombre,c.direccion,c.cp,p.nombre as Provincia,c.telefono,c.email,con.descripcion as CondicionIva,c.cuit,c.observaciones,c.estado from clientes c, provincias p, CONTRIBUYENTES con where c.idprovincia=p.id and con.ID=c.IDCONTRIBUYENTE and estado=1 and c.nombre like '%{0}%'",nombre);
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
 
-
-
-
-
+                while (lector.Read())
+                {
+                    nuevo = new Cliente();
+                    nuevo.id = (int)lector["id"];
+                    nuevo.Nombre = (string)lector["Nombre"];
+                    nuevo.Direccion = (string)lector["direccion"];
+                    nuevo.CP = (int)lector["cp"];
+                    nuevo.Telefono = (string)lector["telefono"];
+                    nuevo.Email = (string)lector["email"];
+                    nuevo.Cuit = (string)lector["cuit"];
+                    nuevo.Observaciones = (string)lector["observaciones"];
+                    nuevo.estado = (bool)lector["estado"];
+                    nuevo.Provincia = new Provincia();
+                    nuevo.Provincia.Nombre = lector["Provincia"].ToString();
+                    nuevo.contribuyente = new Contribuyente();
+                    nuevo.contribuyente.Descripcion = lector["CondicionIva"].ToString();
                     listado.Add(nuevo);
                 }
 

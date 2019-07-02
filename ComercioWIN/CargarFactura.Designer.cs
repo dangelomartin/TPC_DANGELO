@@ -31,19 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CargarFactura));
             this.lblProveedor = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtComprobante = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cboCondicion = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtMonto = new System.Windows.Forms.TextBox();
             this.lblMonto = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.btnBuscarProo = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.dgvDetalleArticulo = new System.Windows.Forms.DataGridView();
             this.txtNombreproov = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPuesto = new System.Windows.Forms.TextBox();
             this.btnAgregarArt = new System.Windows.Forms.Button();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.btnQuitar = new System.Windows.Forms.Button();
@@ -79,13 +79,13 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Fecha";
             // 
-            // textBox4
+            // txtComprobante
             // 
-            this.textBox4.Location = new System.Drawing.Point(263, 35);
-            this.textBox4.MaxLength = 8;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 2;
+            this.txtComprobante.Location = new System.Drawing.Point(263, 35);
+            this.txtComprobante.MaxLength = 8;
+            this.txtComprobante.Name = "txtComprobante";
+            this.txtComprobante.Size = new System.Drawing.Size(100, 20);
+            this.txtComprobante.TabIndex = 2;
             // 
             // label5
             // 
@@ -122,6 +122,7 @@
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(100, 20);
             this.txtMonto.TabIndex = 5;
+            this.txtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonto_KeyPress);
             // 
             // lblMonto
             // 
@@ -132,12 +133,12 @@
             this.lblMonto.TabIndex = 25;
             this.lblMonto.Text = "Monto $";
             // 
-            // dateTimePicker1
+            // dtpFecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(386, 36);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dtpFecha.Location = new System.Drawing.Point(386, 36);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtpFecha.TabIndex = 3;
             // 
             // btnBuscarProo
             // 
@@ -190,13 +191,13 @@
             this.txtNombreproov.Size = new System.Drawing.Size(100, 20);
             this.txtNombreproov.TabIndex = 1;
             // 
-            // textBox1
+            // txtPuesto
             // 
-            this.textBox1.Location = new System.Drawing.Point(211, 36);
-            this.textBox1.MaxLength = 4;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(46, 20);
-            this.textBox1.TabIndex = 32;
+            this.txtPuesto.Location = new System.Drawing.Point(211, 36);
+            this.txtPuesto.MaxLength = 4;
+            this.txtPuesto.Name = "txtPuesto";
+            this.txtPuesto.Size = new System.Drawing.Size(46, 20);
+            this.txtPuesto.TabIndex = 32;
             // 
             // btnAgregarArt
             // 
@@ -350,19 +351,19 @@
             this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.btnAgregarArt);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPuesto);
             this.Controls.Add(this.txtNombreproov);
             this.Controls.Add(this.dgvDetalleArticulo);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnBuscarProo);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.lblMonto);
             this.Controls.Add(this.txtMonto);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cboCondicion);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtComprobante);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblProveedor);
             this.Name = "CargarFactura";
@@ -377,19 +378,19 @@
         #endregion
         private System.Windows.Forms.Label lblProveedor;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtComprobante;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboCondicion;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtMonto;
         private System.Windows.Forms.Label lblMonto;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Button btnBuscarProo;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.DataGridView dgvDetalleArticulo;
         private System.Windows.Forms.TextBox txtNombreproov;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPuesto;
         private System.Windows.Forms.Button btnAgregarArt;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Button btnQuitar;

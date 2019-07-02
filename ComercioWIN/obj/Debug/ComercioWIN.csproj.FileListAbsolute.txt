@@ -13,7 +13,6 @@ C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\bin\Debug\Negocio.dll
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\bin\Debug\Dominio.pdb
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\bin\Debug\Negocio.pdb
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.csproj.CopyComplete
-C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.Facturacompra.resources
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.ListarProvincias.resources
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.ListarClientesLite.resources
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.AñadirCliente.resources
@@ -25,7 +24,6 @@ C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.Precauci
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.AñadirArticulo.resources
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.CompletoArticulo.resources
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.CargarFactura.resources
-C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.Compras.resources
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.Factura.resources
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.ListarProveedores.resources
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.CompletoProveedor.resources
@@ -33,3 +31,6 @@ C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.AñadirP
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.ListarRubro.resources
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.AñadirRubro.resources
 C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.AñadirMarca.resources
+C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\ComercioWIN.Reporte.resources
+C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\RdlCompile.cache
+C:\Users\Martin\source\repos\COMERCIO\ComercioWIN\obj\Debug\RdlCompile.compiled

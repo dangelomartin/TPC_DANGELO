@@ -8,11 +8,9 @@ namespace Dominio
 {
     public class FacturaVenta
     {
-        public int idcliente { set; get; }
+        public Cliente cliente { set; get; }
         public int idfact { set; get; }
-//        public int numFact { set; get; }
-        public List<DetalleArticulo> DetalleArticulos { set; get; } 
- 
-
-}
+        public DateTime fecha { set; get; }
+        public decimal importe { set; get; }
+    }
 }

@@ -1,0 +1,175 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="WebComercio.Home" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Sistema Administracion</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta name="viewport" content="width=device-with, initial-scale=1, maximun-scale=1,user-scalable=no"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/> 
+    <link href="css/ionicons.min.css" rel="stylesheet" type="text/css"/> 
+    <link href="css/AdminLTE.css" rel="stylesheet" type="text/css"/>
+    <style>
+ html, body{
+  min-height: 100%;
+  padding: 0;
+  margin: 0 ;
+  font-family: "Source Sans Pro", "Helvetica Neve", Helvetica, Arial;
+ }
+
+ iframe{
+  display: block;
+  overflow: auto;
+  border: 0;
+  margin: 0 auto;
+  padding: 0;
+ }
+
+ .frame{
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #ddd;
+ }
+
+ .frame a{
+  color: #666;
+ }
+
+ .frame a:hover{
+  color: #222;
+ } 
+
+ .frame .buttons a{
+  height: 49px;
+  line-height: 49px;
+  display: inline-block;
+  text-align: center;
+  width: 50px;
+  border-left: 1px solid #ddd;
+ }
+
+ .frame .brand{
+  color: #444
+  font-size: 20px;
+  line-height: 49px;
+  display: inline-block;
+  padding-left: 10px
+ }
+
+ .frame .brand small{
+  font-size: 14px;
+ }
+
+ a, a:hover{
+  text-decoration: none;
+ }
+
+ .container-fluid{
+  padding: 0;
+  margin: 0;
+ }
+
+ .text-muted{
+  color: #999;
+ }
+
+ .ad{
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  backgroud: #222;
+  backgroud: rgba(0,0,0,0,8);
+  width: 100%;
+  color: #fff;
+  display: none;
+ }
+
+ #close-ad{
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+ }
+</style>
+</head>
+<body class="skin-blue">
+    <header class="header">
+        <!---- CABECERA DE PAGINA MASTER (INICIO)--->
+        <a href="#" class="logo">Sistema Comercio 2019</a>
+        <nav class="navbar navbar-static-top" role="navigation">
+            <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+        </nav>
+        <!---- CABECERA DE PAGINA MASTER (FIN)--->
+    </header>
+   
+    <div class="wrapper row-offcanvas row-offcanvas-left">
+        <aside class="left-side sidebar-offcanvas">
+            <section class="sidebar">
+                <div class=" user-panel">
+                    <div class="pull-left image">
+                        <img src="img/user.jpg" class="img-circle" alt="User Image" />
+                    </div>
+                    <div class="pull-left info">
+                        <p> Bienvenido Banana</p>
+                    </div>
+                </div>
+                <ul class="sidebar-menu">
+                    <li class="active">
+                        <a href="#">
+                            <i class="fa fa-dashboard"></i>
+                            <span>Panel General</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-th"></i>
+                            <span>Listar Ventas</span>
+                        </a>
+                    </li>
+                     <li>
+                        <a href="Gestion de Clientes.aspx">
+                            <i class="fa fa-th"></i>
+                            <span>Listar Clientes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="ListarVentas.aspx">
+                            <i class="fa fa-th"></i>
+                            <span>Listar Ventas</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <aside class="right-side">
+                <section class="content-header">
+                    <h1>
+                    <asp:Label ID="lblOpcion" runat="server" Text="PANEL GENERAL" />
+                        </h1>
+                </section>
+                <section class="content">
+                    <form id="form1" runat="server">
+                        <div>
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                       </div>
+                    </form>
+                </section>
+            </aside>
+    </div>
+     <asp:ContentPlaceHolder ID="footer" runat="server"></asp:ContentPlaceHolder>
+     
+            
+</body>
+</html>

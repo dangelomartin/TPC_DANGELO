@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoaDatos", "AccesoaDato
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComercioWEB", "ComercioWEB\ComercioWEB.csproj", "{C8AFB3A6-AC80-4365-8E0C-AD7E16C7A389}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebComercio", "WebComercio\WebComercio.csproj", "{26C79C43-2C2C-40CC-BAD1-028D9603158A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{C8AFB3A6-AC80-4365-8E0C-AD7E16C7A389}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8AFB3A6-AC80-4365-8E0C-AD7E16C7A389}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8AFB3A6-AC80-4365-8E0C-AD7E16C7A389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26C79C43-2C2C-40CC-BAD1-028D9603158A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26C79C43-2C2C-40CC-BAD1-028D9603158A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26C79C43-2C2C-40CC-BAD1-028D9603158A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26C79C43-2C2C-40CC-BAD1-028D9603158A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

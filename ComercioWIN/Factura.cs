@@ -129,31 +129,43 @@ namespace ComercioWIN
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            if(txtFinal.Text != "")
+            try
             {
-                DetalleArticulo ArticuloVendido = new DetalleArticulo();
-                DetalleVentaNegocio negocio = new DetalleVentaNegocio();
-                FacturaVenta factura = new FacturaVenta();
-
-
-                factura.idcliente = clienteLocal.id;
-                factura.idfact = negocio.NumFactura();
-                negocio.AgregarVenta(factura);
-
-                foreach (DataGridViewRow row3 in dgvDetalleArticulo.Rows)
+                if (txtFinal.Text != "")
                 {
-                    ArticuloVendido.articulo = new Articulo();
-                    ArticuloVendido.articulo.id = Convert.ToInt32(row3.Cells["Cod"].Value);
-                    ArticuloVendido.preciounit = Convert.ToDecimal(row3.Cells["Precio uni"].Value);
-                    ArticuloVendido.cantidad = Convert.ToDecimal(row3.Cells["Cantidad"].Value);
-                    ArticuloVendido.idfactura = factura.idfact;
-                    //ArticuloVendido.total = decimal.Parse(txtFinal.Text);
-                    negocio.AgregarArticulo(ArticuloVendido, factura.idfact);
+                    DetalleArticulo ArticuloVendido = new DetalleArticulo();
+                    DetalleVentaNegocio negocio = new DetalleVentaNegocio();
+                    FacturaVenta factura = new FacturaVenta();
+
+                    factura.cliente = clienteLocal;
+                    factura.idfact = negocio.NumFactura();
+                    factura.importe = Convert.ToDecimal(txtFinal.Text);
+                    negocio.AgregarVenta(factura);
+
+                    foreach (DataGridViewRow row3 in dgvDetalleArticulo.Rows)
+                    {
+                        ArticuloVendido.articulo = new Articulo();
+                        ArticuloVendido.articulo.id = Convert.ToInt32(row3.Cells["Cod"].Value);
+                        ArticuloVendido.preciounit = Convert.ToDecimal(row3.Cells["Precio uni"].Value);
+                        ArticuloVendido.cantidad = Convert.ToDecimal(row3.Cells["Cantidad"].Value);
+                        ArticuloVendido.idfactura = factura.idfact;
+                        negocio.AgregarArticulo(ArticuloVendido, factura.idfact);
+                    }
+                    Close();
+                    
+                    
+          
                 }
-            
-                
             }
-        }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw;
+            }
+            
+
+            }
+        
 
         private void txtCantidad_TextChanged(object sender, EventArgs e)
         {

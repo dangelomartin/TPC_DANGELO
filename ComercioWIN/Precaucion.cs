@@ -32,5 +32,10 @@ namespace ComercioWIN
         {
             Close();
         }
+
+        private void printPreviewControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

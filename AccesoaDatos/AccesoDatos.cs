@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace AccesoDatos
 {
@@ -37,8 +38,24 @@ namespace AccesoDatos
                 comando.CommandText = consulta;
             }
 
-            
-            public void setearSP(string sp)
+
+        public DataSet dataSet(string cmd)
+        {
+            AccesoDatosMaster ad = new AccesoDatosMaster();
+            ad.abrirConexion();
+
+            DataSet ds = new DataSet();
+            SqlDataAdapter dp = new SqlDataAdapter(cmd, cadenaConexion);
+
+            dp.Fill(ds);
+            ad.cerrarConexion();
+
+            return ds;
+
+        }
+        
+
+        public void setearSP(string sp)
             {
                 comando = new SqlCommand();
                 comando.CommandType = System.Data.CommandType.StoredProcedure;

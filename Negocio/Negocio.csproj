@@ -55,6 +55,7 @@
     <Compile Include="ProveedorNegocio.cs" />
     <Compile Include="ProvinciaNegocio.cs" />
     <Compile Include="RubroNegocio.cs" />
+    <Compile Include="UsuarioNegocio.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AccesoaDatos\AccesoaDatos.csproj">
