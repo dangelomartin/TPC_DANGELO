@@ -34,12 +34,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.printPreviewControl1 = new System.Windows.Forms.PrintPreviewControl();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAceptar
             // 
             this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Location = new System.Drawing.Point(63, 109);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
@@ -51,6 +52,7 @@
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Location = new System.Drawing.Point(178, 109);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
@@ -62,7 +64,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 73);
+            this.label1.Location = new System.Drawing.Point(17, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(291, 13);
             this.label1.TabIndex = 2;
@@ -87,25 +89,33 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
-            // printPreviewControl1
+            // button1
             // 
-            this.printPreviewControl1.Location = new System.Drawing.Point(0, 0);
-            this.printPreviewControl1.Name = "printPreviewControl1";
-            this.printPreviewControl1.Size = new System.Drawing.Size(176, 103);
-            this.printPreviewControl1.TabIndex = 4;
-            this.printPreviewControl1.Click += new System.EventHandler(this.printPreviewControl1_Click);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(133, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(51, 51);
+            this.button1.TabIndex = 4;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Precaucion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(320, 136);
-            this.Controls.Add(this.printPreviewControl1);
+            this.ControlBox = false;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Precaucion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Precaucion";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -119,6 +129,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
-        private System.Windows.Forms.PrintPreviewControl printPreviewControl1;
+        private System.Windows.Forms.Button button1;
     }
 }

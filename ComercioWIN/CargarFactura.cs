@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Negocio;
+using Dominio.Models;
 
 namespace ComercioWIN
 {
@@ -22,10 +23,13 @@ namespace ComercioWIN
         {
             InitializeComponent();
             dt = new DataTable();
-            dt.Columns.Add("Cantidad");
+            dt.Columns.Add("Cant");
             dt.Columns.Add("Cod");
             dt.Columns.Add("Descripcion");
             dgvDetalleArticulo.DataSource = dt;
+            dgvDetalleArticulo.Columns[1].Width = 50;
+            dgvDetalleArticulo.Columns[0].Width = 50;
+            dgvDetalleArticulo.Columns[2].Width = 200;
 
         }
 
@@ -78,7 +82,7 @@ namespace ComercioWIN
             ListarArticulosLite BuscarArt = new ListarArticulosLite();
             ArtAgregar = BuscarArt.ArtSelect(true);
             txtID.Text = ArtAgregar.id.ToString();
-            txtDescripcion.Text = ArtAgregar.Descripcion1;
+            txtDescripcion.Text = ArtAgregar.Descripcion;
             txtCostoActual.Text = ArtAgregar.Costo.ToString();
             
         }
@@ -102,14 +106,14 @@ namespace ComercioWIN
                 {
                     if (row2.Cells["Cod"].Value.ToString() == ArtAgregar.id.ToString())
                     {
-                        row2.Cells["Cantidad"].Value = Convert.ToInt32(row2.Cells["Cantidad"].Value) + Convert.ToInt32(txtCantidad.Text.Replace(".", ","));
-                        row2.Cells["Descripcion"].Value = ArtAgregar.Descripcion1;
+                        row2.Cells["Cant"].Value = Convert.ToInt32(row2.Cells["Cant"].Value) + Convert.ToInt32(txtCantidad.Text);
+                        row2.Cells["Descripcion"].Value = ArtAgregar.Descripcion;
                         existe = true;
                     }
                 }
                 if (existe == false)
                 {
-                    dt.Rows.Add(txtCantidad.Text, ArtAgregar.id, ArtAgregar.Descripcion1);
+                    dt.Rows.Add(txtCantidad.Text, ArtAgregar.id, ArtAgregar.Descripcion);
                 }
                 lblIngrCant.Visible = false;
                 lblSelecArt.Visible = false;
@@ -151,8 +155,12 @@ namespace ComercioWIN
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            if(ValidateC())
+            {
 
             ComprasNegocio agregar = new ComprasNegocio();
+            Articulo articuloLista = new Articulo();
+            ArticuloNegocio stock = new ArticuloNegocio();
             if (proveedorLocal != null)
             {
                 FacturaNueva.NumeroPuesto = txtPuesto.Text;
@@ -169,11 +177,21 @@ namespace ComercioWIN
                 agregar.AgregarCompra(FacturaNueva);
             }else
             {
-                Precaucion form = new Precaucion();
-                form.ShowDialog();
+                MessageBox.Show("EL COMPROBANTE INGRESADO YA EXISTE");
+                return;
             }
 
+                foreach (DataGridViewRow row in dgvDetalleArticulo.Rows)
+                {
+                    articuloLista.id = Convert.ToInt32(row.Cells["Cod"].Value);
+                    articuloLista.StockActual = Convert.ToInt32(row.Cells["Cant"].Value);
+                    stock.SubirStock(articuloLista);
+                }
 
+                Close();
+
+
+            }
 
         }
 
@@ -184,5 +202,45 @@ namespace ComercioWIN
                 e.Handled = true;
             }
         }
-    }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarLetrasNumeros.validarNumeros(e);
+        }
+
+        private void txtPuesto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarLetrasNumeros.validarNumeros(e);
+        }
+
+        private void txtComprobante_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarLetrasNumeros.validarNumeros(e);
+        }
+
+        ErrorProvider ErrorProvider = new ErrorProvider();
+
+        private bool ValidateC()
+        {
+            bool Valid = true;
+
+            if (txtMonto.Text == "")
+            {
+                Valid = false;
+                ErrorProvider.SetError(txtMonto, "Campo Incompleto");
+            }
+            if (txtPuesto.Text == "")
+            {
+                Valid = false;
+                ErrorProvider.SetError(txtPuesto, "Campo Incompleto");
+            }
+            if (txtComprobante.Text == "")
+            {
+                Valid = false;
+                ErrorProvider.SetError(txtComprobante, "Campo Incompleto");
+            }
+
+            return Valid;
+        }
+        }
 }

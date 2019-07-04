@@ -24,9 +24,10 @@ namespace ComercioWIN
 
         private void ListarArticulos_Load(object sender, EventArgs e)
         {
-            if(estadoventana == false)
+
+            if (estadoventana == false)
             {
-                btnCerrar.Enabled = false;
+                btnSeleccionar.Enabled = false;
             }
             ArticuloNegocio negocio = new ArticuloNegocio();
             try
@@ -52,14 +53,19 @@ namespace ComercioWIN
                 dgvListarArticulos.Columns[3].Visible = false;
                 dgvListarArticulos.Columns[4].Visible = false;
                 dgvListarArticulos.Columns[5].Visible = false;
-                dgvListarArticulos.Columns[7].Visible = false;
+                dgvListarArticulos.Columns[6].Visible = false;
+
                 dgvListarArticulos.Columns[8].Visible = false;
                 dgvListarArticulos.Columns[9].Visible = false;
                 dgvListarArticulos.Columns[10].Visible = false;
-                dgvListarArticulos.Columns[11].Visible = false;
-                dgvListarArticulos.Columns[14].Visible = false;
-                dgvListarArticulos.Columns[15].Visible = false;
-                dgvListarArticulos.Columns[16].Visible = false;
+                
+                
+                
+                dgvListarArticulos.Columns[0].Width = 40;
+                dgvListarArticulos.Columns[1].Width = 200;
+                dgvListarArticulos.Columns[8].Width = 80;
+                dgvListarArticulos.Columns[11].Width = 60;
+
 
             }
             catch (Exception ex)
@@ -140,6 +146,11 @@ namespace ComercioWIN
             {
                 throw;
             }
+        }
+
+        private void bntcerrar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

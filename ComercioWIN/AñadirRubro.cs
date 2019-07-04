@@ -46,7 +46,8 @@ namespace ComercioWIN
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            
+            if(ValidateC())
+            {
             try
             {
                 RubroNegocio negocio = new RubroNegocio();
@@ -70,9 +71,24 @@ namespace ComercioWIN
 
                 MessageBox.Show(ex.ToString());
             }
+            }
+        
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        ErrorProvider ErrorProvider = new ErrorProvider();
+
+        private bool ValidateC()
+        {
+            bool Valid = true;
+
+            if (txtDescripcion.Text == "")
+            {
+                Valid = false;
+                ErrorProvider.SetError(txtDescripcion, "Campo Incompleto");
+            }
+            return Valid;
+        }
+            private void btnCerrar_Click(object sender, EventArgs e)
         {
             Close();
         }

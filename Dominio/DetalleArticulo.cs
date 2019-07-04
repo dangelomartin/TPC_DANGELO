@@ -8,7 +8,7 @@ namespace Dominio
 {
     public class DetalleArticulo
     {
-        public decimal cantidad { set; get; }
+        public int cantidad { set; get; }
         public Articulo articulo { set; get; }
         public decimal preciounit { set; get; }
         

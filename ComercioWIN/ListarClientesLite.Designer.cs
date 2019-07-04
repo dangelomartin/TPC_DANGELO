@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListarClientesLite));
-            this.dgvClientesLite = new System.Windows.Forms.DataGridView();
             this.txtBusquedaCliente = new System.Windows.Forms.TextBox();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -38,32 +36,9 @@
             this.btnCompleto = new System.Windows.Forms.Button();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.dgvClientesLite = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientesLite)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvClientesLite
-            // 
-            this.dgvClientesLite.AllowUserToAddRows = false;
-            this.dgvClientesLite.AllowUserToDeleteRows = false;
-            this.dgvClientesLite.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvClientesLite.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvClientesLite.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgvClientesLite.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvClientesLite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientesLite.Location = new System.Drawing.Point(12, 52);
-            this.dgvClientesLite.Name = "dgvClientesLite";
-            this.dgvClientesLite.ReadOnly = true;
-            this.dgvClientesLite.RowHeadersVisible = false;
-            this.dgvClientesLite.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientesLite.Size = new System.Drawing.Size(482, 197);
-            this.dgvClientesLite.TabIndex = 0;
-            this.dgvClientesLite.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientesLite_CellContentClick);
             // 
             // txtBusquedaCliente
             // 
@@ -78,7 +53,7 @@
             this.btnAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarCliente.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAgregarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCliente.Image")));
-            this.btnAgregarCliente.Location = new System.Drawing.Point(505, 1);
+            this.btnAgregarCliente.Location = new System.Drawing.Point(463, 12);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
             this.btnAgregarCliente.Size = new System.Drawing.Size(56, 61);
             this.btnAgregarCliente.TabIndex = 2;
@@ -90,10 +65,10 @@
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.Location = new System.Drawing.Point(505, 135);
+            this.btnModificar.Location = new System.Drawing.Point(463, 146);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(56, 61);
-            this.btnModificar.TabIndex = 3;
+            this.btnModificar.TabIndex = 4;
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
@@ -102,10 +77,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(505, 68);
+            this.button2.Location = new System.Drawing.Point(463, 79);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(56, 61);
-            this.button2.TabIndex = 4;
+            this.button2.TabIndex = 3;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -114,7 +89,7 @@
             this.btnCompleto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCompleto.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnCompleto.Image = ((System.Drawing.Image)(resources.GetObject("btnCompleto.Image")));
-            this.btnCompleto.Location = new System.Drawing.Point(505, 202);
+            this.btnCompleto.Location = new System.Drawing.Point(463, 213);
             this.btnCompleto.Name = "btnCompleto";
             this.btnCompleto.Size = new System.Drawing.Size(56, 61);
             this.btnCompleto.TabIndex = 5;
@@ -138,16 +113,27 @@
             this.btnBuscar.Location = new System.Drawing.Point(234, 255);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(51, 51);
-            this.btnBuscar.TabIndex = 9;
+            this.btnBuscar.TabIndex = 6;
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dgvClientesLite
+            // 
+            this.dgvClientesLite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientesLite.Location = new System.Drawing.Point(12, 50);
+            this.dgvClientesLite.Name = "dgvClientesLite";
+            this.dgvClientesLite.RowHeadersVisible = false;
+            this.dgvClientesLite.Size = new System.Drawing.Size(445, 199);
+            this.dgvClientesLite.TabIndex = 9;
             // 
             // ListarClientesLite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(564, 317);
+            this.ClientSize = new System.Drawing.Size(530, 317);
+            this.Controls.Add(this.dgvClientesLite);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblBusqueda);
             this.Controls.Add(this.btnCompleto);
@@ -155,7 +141,9 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregarCliente);
             this.Controls.Add(this.txtBusquedaCliente);
-            this.Controls.Add(this.dgvClientesLite);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ListarClientesLite";
             this.Text = "ListarClientesLite";
             this.Load += new System.EventHandler(this.ListarClientesLite_Load);
@@ -166,8 +154,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvClientesLite;
         private System.Windows.Forms.TextBox txtBusquedaCliente;
         private System.Windows.Forms.Button btnAgregarCliente;
         private System.Windows.Forms.Button btnModificar;
@@ -175,5 +161,6 @@
         private System.Windows.Forms.Button btnCompleto;
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.DataGridView dgvClientesLite;
     }
 }

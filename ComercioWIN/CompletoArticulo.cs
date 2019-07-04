@@ -31,7 +31,7 @@ namespace ComercioWIN
             try
             {
 
-                txtDescri1.Text = articuloLocal.Descripcion1;
+                txtDescri1.Text = articuloLocal.Descripcion;
                 txtCodBarras.Text = articuloLocal.codBarras.ToString();
                 txtMarca.Text = articuloLocal.Marca.Descripcion;
                 txtRubro.Text = articuloLocal.Rubro.Descripcion;
@@ -39,13 +39,9 @@ namespace ComercioWIN
                 txtStockmin.Text = articuloLocal.StockMin.ToString();
                 txtStockmax.Text = articuloLocal.StockMax.ToString();
                 txtCost.Text = articuloLocal.Costo.ToString();
-                txtIva.Text = articuloLocal.Iva.Descripcion;
-                txtDesc1.Text = articuloLocal.Descuento1.ToString();
-                txtDesc2.Text = articuloLocal.Descuento2.ToString();
-                txtDesc3.Text = articuloLocal.Descuento3.ToString();
-                txtDesc4.Text = articuloLocal.Descuento4.ToString();
                 txtGanancia.Text = articuloLocal.Ganancia.ToString();
                 txtPrecio.Text = articuloLocal.PrecioPublico.ToString();
+                txtStockActual.Text = articuloLocal.StockActual.ToString();
             }
             catch (Exception)
             {

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AñadirRubro));
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -46,12 +47,14 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(82, 18);
+            this.txtDescripcion.MaxLength = 30;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcion.TabIndex = 3;
             // 
             // btnAceptar
             // 
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Location = new System.Drawing.Point(15, 56);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
@@ -62,6 +65,7 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Location = new System.Drawing.Point(107, 56);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
@@ -70,17 +74,24 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // AMGenerico
+            // AñadirRubro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(201, 92);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(213, 92);
+            this.ControlBox = false;
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.lblDescripcion);
-            this.Name = "AMGenerico";
-            this.Text = "AMGenerico";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "AñadirRubro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Añadir Rubro";
             this.Load += new System.EventHandler(this.AMGenerico_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

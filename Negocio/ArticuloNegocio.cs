@@ -25,7 +25,8 @@ namespace Negocio
             {
                 conexion.ConnectionString = AccesoDatos.AccesoDatosMaster.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select a.id, a.descripcion1, a.CodBarras, isnull(a.stockMin,'') as StockMin, isnull(a.stockMax,'') as StockMax,a.stockactual, i.Porcentaje as IVA,a.costo,a.desc1 as Descuento1,a.desc2 as Descuento2,a.desc3 as Descuento3,a.desc4 as Descuento4, a.ganancia, m.descripcion as Marca, r.descripcion as Rubro, p.Nombre as Proveedor,a.estado  from articulo as a, IVA as i,Marcas as m,Rubros as r, Proveedores as p where a.idIva=i.id and a.idMarca=m.id and a.idProveedores=p.id and a.idRubro=r.id and a.estado=1";
+                //comando.CommandText = "select a.id, a.descripcion1, a.CodBarras, isnull(a.stockMin,'') as StockMin, isnull(a.stockMax,'') as StockMax,a.stockactual, i.Porcentaje as IVA,a.costo, a.ganancia, m.descripcion as Marca, r.descripcion as Rubro, p.Nombre as Proveedor,a.estado  from articulo as a, IVA as i,Marcas as m,Rubros as r, Proveedores as p where a.idIva=i.id and a.idMarca=m.id and a.idProveedores=p.id and a.idRubro=r.id and a.estado=1";
+                comando.CommandText = "select * from VW_Articulo";
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -33,28 +34,30 @@ namespace Negocio
                 while (lector.Read())
                 {
                     nuevo = new Articulo();
-                    nuevo.id = (int)lector["id"];
-                    nuevo.Descripcion1 = (string)lector["Descripcion1"];
-                    nuevo.codBarras = (long)lector["codBarras"];
+                    nuevo.id = (int)lector["ID"];
+                    nuevo.Descripcion = (string)lector["Descripcion"];
+                    nuevo.codBarras = (long)lector["CodBarras"];
                     nuevo.StockMin = (int)lector["StockMin"];
                     nuevo.StockMax = (int)lector["StockMax"];
-                    nuevo.Iva = new Iva();
-                    nuevo.Iva.Descripcion = lector["IVA"].ToString();
+                    nuevo.StockActual = (int)lector["StockActual"];
                     nuevo.Costo = (decimal)lector["Costo"];
-                    nuevo.Descuento1 = Convert.ToDecimal(lector["Descuento1"]);
-                    nuevo.Descuento2 = Convert.ToDecimal(lector["Descuento2"]);
-                    nuevo.Descuento3 = Convert.ToDecimal(lector["Descuento3"]);
-                    nuevo.Descuento4 = Convert.ToDecimal(lector["Descuento4"]);
                     nuevo.Ganancia = (int)lector["Ganancia"];
                     nuevo.Marca = new Marca();
-                    nuevo.Marca.Descripcion = lector["Marca"].ToString();
+                    nuevo.Marca.Descripcion = lector["Marcar"].ToString();
                     nuevo.Rubro = new Rubro();
                     nuevo.Rubro.Descripcion = lector["Rubro"].ToString();
                     nuevo.Proveedor = new Proveedor();
                     nuevo.Proveedor.Nombre = lector["Proveedor"].ToString();
-                    nuevo.estado = (bool)lector["estado"];
-                    nuevo.StockActual = (int)lector["stockActual"];
+                    nuevo.PrecioPublico = (decimal)lector["PrecioPublico"];
                     listado.Add(nuevo);
+
+                    /*nuevo.Descuento1 = Convert.ToDecimal(lector["Descuento1"]);
+                    nuevo.Descuento2 = Convert.ToDecimal(lector["Descuento2"]);
+                    nuevo.Descuento3 = Convert.ToDecimal(lector["Descuento3"]);
+                    nuevo.Descuento4 = Convert.ToDecimal(lector["Descuento4"]);*/
+                    //nuevo.estado = (bool)lector["estado"];
+                    /*nuevo.Iva = new Iva();
+                    nuevo.Iva.Descripcion = lector["IVA"].ToString();*/
                 }
 
                 return listado;
@@ -79,8 +82,8 @@ namespace Negocio
             {
                 conexion.ConnectionString = AccesoDatos.AccesoDatosMaster.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "insert into articulo (Descripcion1,CodBarras,StockMin,StockMax,IdIva,Costo,Desc1,Desc2,Desc3,Desc4,ganancia,IdMarca,IdRubro,IdProveedores) values";
-                comando.CommandText += "('" + nuevo.Descripcion1 + "', '" + nuevo.codBarras + "', '" + nuevo.StockMin + "', '" + nuevo.StockMax + "', '" + nuevo.Iva.id.ToString() + "', '" + nuevo.Costo + "','" + nuevo.Descuento1 + "', '" + nuevo.Descuento2 + "', '" + nuevo.Descuento3 + "', '" + nuevo.Descuento4 + "', '" + nuevo.Ganancia + "', '" + nuevo.Marca.id.ToString() + "', '" + nuevo.Rubro.id.ToString() + "', '" + nuevo.Proveedor.id.ToString() + "')";
+                comando.CommandText = "insert into articulo (Descripcion1,CodBarras,StockMin,StockMax,Costo,ganancia,IdMarca,IdRubro,IdProveedores,stockactual) values";
+                comando.CommandText += "('" + nuevo.Descripcion + "', '" + nuevo.codBarras + "', '" + nuevo.StockMin + "', '" + nuevo.StockMax + "', '" + nuevo.Costo + "', '" + nuevo.Ganancia + "', '" + nuevo.Marca.id.ToString() + "', '" + nuevo.Rubro.id.ToString() + "', '" + nuevo.Proveedor.id.ToString() + "','" +nuevo.StockActual+ "')";
                 comando.Connection = conexion;
                 conexion.Open();
 
@@ -102,19 +105,16 @@ namespace Negocio
         try
         {
 
-            accesoDatos.setearConsulta("update articulo Set Descripcion1=@Descripcion1, codBarras=@CodBarras, StockMin=@StockMin, StockMax=@StockMax, idiva=@IdIva, costo=@Costo, desc1=@Desc1, desc2=@Desc2, desc3=@Desc3, desc4=@Desc4,ganancia=@Ganancia,IdMarca=@IdMarca, idrubro=@IdRubro, idproveedores=@IdProveedores where Id=" + modificar.id.ToString());
+            accesoDatos.setearConsulta("update articulo Set Descripcion1=@Descripcion, codBarras=@CodBarras, StockMin=@StockMin, StockMax=@StockMax,  costo=@Costo, ganancia=@Ganancia,IdMarca=@IdMarca, idrubro=@IdRubro, idproveedores=@IdProveedores where Id=" + modificar.id.ToString());
             accesoDatos.Comando.Parameters.Clear();
 
-            accesoDatos.Comando.Parameters.AddWithValue("@Descripcion1", modificar.Descripcion1);
+            accesoDatos.Comando.Parameters.AddWithValue("@Descripcion", modificar.Descripcion);
             accesoDatos.Comando.Parameters.AddWithValue("@CodBarras", modificar.codBarras);
             accesoDatos.Comando.Parameters.AddWithValue("@StockMin", modificar.StockMin);
-            accesoDatos.Comando.Parameters.AddWithValue("@stockMax", modificar.StockMax);
-            accesoDatos.Comando.Parameters.AddWithValue("@IdIva", modificar.Iva.id);
+            accesoDatos.Comando.Parameters.AddWithValue("@StockMax", modificar.StockMax);
+            
             accesoDatos.Comando.Parameters.AddWithValue("@costo", modificar.Costo);
-            accesoDatos.Comando.Parameters.AddWithValue("@Desc1", modificar.Descuento1);
-            accesoDatos.Comando.Parameters.AddWithValue("@Desc2", modificar.Descuento2);
-            accesoDatos.Comando.Parameters.AddWithValue("@Desc3", modificar.Descuento3);
-            accesoDatos.Comando.Parameters.AddWithValue("@Desc4", modificar.Descuento4);
+           
             accesoDatos.Comando.Parameters.AddWithValue("@Ganancia", modificar.Ganancia);
             accesoDatos.Comando.Parameters.AddWithValue("@IdMarca", modificar.Marca.id);
             accesoDatos.Comando.Parameters.AddWithValue("@IdRubro", modificar.Rubro.id);
@@ -122,8 +122,13 @@ namespace Negocio
             accesoDatos.abrirConexion();
             accesoDatos.ejecutarAccion();
 
-        }
-        catch (Exception ex)
+                //accesoDatos.Comando.Parameters.AddWithValue("@Desc1", modificar.Descuento1);
+                //accesoDatos.Comando.Parameters.AddWithValue("@Desc2", modificar.Descuento2);
+                //accesoDatos.Comando.Parameters.AddWithValue("@Desc3", modificar.Descuento3);
+                //accesoDatos.Comando.Parameters.AddWithValue("@Desc4", modificar.Descuento4);
+                //accesoDatos.Comando.Parameters.AddWithValue("@IdIva", modificar.Iva.id);
+            }
+            catch (Exception ex)
         {
             throw ex;
         }
@@ -132,6 +137,9 @@ namespace Negocio
             accesoDatos.cerrarConexion();
         }
       }
+
+
+
         public void BajaArticulo (Articulo baja)
 
         {
@@ -139,6 +147,48 @@ namespace Negocio
             try
             {
                 accesoDatos.setearConsulta("update Articulo Set estado='0' where Id=" + baja.id.ToString());
+                accesoDatos.Comando.Parameters.Clear();
+                accesoDatos.abrirConexion();
+                accesoDatos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+        }
+
+        public void SubirStock(Articulo Stock)
+
+        {
+            AccesoDatos.AccesoDatosMaster accesoDatos = new AccesoDatos.AccesoDatosMaster();
+            try
+            {
+                accesoDatos.setearConsulta("update Articulo Set stockactual=stockactual+"+Stock.StockActual +" where Id=" + Stock.id.ToString());
+                accesoDatos.Comando.Parameters.Clear();
+                accesoDatos.abrirConexion();
+                accesoDatos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+        }
+
+        public void bajarStock(Articulo Stock)
+
+        {
+            AccesoDatos.AccesoDatosMaster accesoDatos = new AccesoDatos.AccesoDatosMaster();
+            try
+            {
+                accesoDatos.setearConsulta("update Articulo Set stockactual=stockactual-" + Stock.StockActual + " where Id=" + Stock.id.ToString());
                 accesoDatos.Comando.Parameters.Clear();
                 accesoDatos.abrirConexion();
                 accesoDatos.ejecutarAccion();
@@ -163,7 +213,8 @@ namespace Negocio
             {
                 conexion.ConnectionString = AccesoDatos.AccesoDatosMaster.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select a.id, a.descripcion1, a.CodBarras, isnull(a.stockMin,'') as StockMin, isnull(a.stockMax,'') as StockMax,a.stockactual, i.Porcentaje as IVA,a.costo,a.desc1 as Descuento1,a.desc2 as Descuento2,a.desc3 as Descuento3,a.desc4 as Descuento4, a.ganancia, m.descripcion as Marca, r.descripcion as Rubro, p.Nombre as Proveedor,a.estado  from articulo as a, IVA as i,Marcas as m,Rubros as r, Proveedores as p where a.idIva=i.id and a.idMarca=m.id and a.idProveedores=p.id and a.idRubro=r.id and a.estado=1 and a.id =" + id.ToString();
+                //comando.CommandText = "select a.id, a.descripcion1, a.CodBarras, isnull(a.stockMin,'') as StockMin, isnull(a.stockMax,'') as StockMax,a.stockactual, i.Porcentaje as IVA,a.costo,a.desc1 as Descuento1,a.desc2 as Descuento2,a.desc3 as Descuento3,a.desc4 as Descuento4, a.ganancia, m.descripcion as Marca, r.descripcion as Rubro, p.Nombre as Proveedor,a.estado  from articulo as a, IVA as i,Marcas as m,Rubros as r, Proveedores as p where a.idIva=i.id and a.idMarca=m.id and a.idProveedores=p.id and a.idRubro=r.id and a.estado=1 and a.id =" + id.ToString();
+                comando.CommandText = "select * from VW_Articulo";
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -174,18 +225,13 @@ namespace Negocio
                     if((int)lector["id"]==id)
                     {
                         nuevo = new Articulo();
-                        nuevo.id = (int)lector["id"];
-                        nuevo.Descripcion1 = (string)lector["Descripcion1"];
-                        nuevo.codBarras = (long)lector["codBarras"];
+                        nuevo.id = (int)lector["ID"];
+                        nuevo.Descripcion = (string)lector["Descripcion"];
+                        nuevo.codBarras = (long)lector["CodBarras"];
                         nuevo.StockMin = (int)lector["StockMin"];
                         nuevo.StockMax = (int)lector["StockMax"];
-                        nuevo.Iva = new Iva();
-                        nuevo.Iva.Descripcion = lector["IVA"].ToString();
+                        nuevo.StockActual = (int)lector["StockActual"];
                         nuevo.Costo = (decimal)lector["Costo"];
-                        nuevo.Descuento1 = Convert.ToDecimal(lector["Descuento1"]);
-                        nuevo.Descuento2 = Convert.ToDecimal(lector["Descuento2"]);
-                        nuevo.Descuento3 = Convert.ToDecimal(lector["Descuento3"]);
-                        nuevo.Descuento4 = Convert.ToDecimal(lector["Descuento4"]);
                         nuevo.Ganancia = (int)lector["Ganancia"];
                         nuevo.Marca = new Marca();
                         nuevo.Marca.Descripcion = lector["Marca"].ToString();
@@ -193,6 +239,7 @@ namespace Negocio
                         nuevo.Rubro.Descripcion = lector["Rubro"].ToString();
                         nuevo.Proveedor = new Proveedor();
                         nuevo.Proveedor.Nombre = lector["Proveedor"].ToString();
+                        nuevo.PrecioPublico = (decimal)lector["PrecioPublico"];
                         nuevo.estado = (bool)lector["estado"];
                         nuevo.StockActual = (int)lector["stockActual"];
                         validar = true;

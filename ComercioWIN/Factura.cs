@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Negocio;
+using Dominio.Models;
 
 namespace ComercioWIN
 {
@@ -27,6 +28,7 @@ namespace ComercioWIN
             dt.Columns.Add("Descripcion");
             dt.Columns.Add("Precio uni");
             dt.Columns.Add("total");
+
             dgvDetalleArticulo.DataSource = dt;
             txtNumFactura.Text = DVN.NumFactura().ToString();
         }
@@ -79,7 +81,7 @@ namespace ComercioWIN
                 if (existe == false)
                 {
                     decimal total = (decimal.Parse(txtCantidad.Text.Replace(".", ",")) * ArtAgregar.PrecioPublico);
-                    dt.Rows.Add(ArtAgregar.id, txtCantidad.Text, ArtAgregar.Descripcion1, ArtAgregar.PrecioPublico, total.ToString());
+                    dt.Rows.Add(ArtAgregar.id, txtCantidad.Text, ArtAgregar.Descripcion, ArtAgregar.PrecioPublico, total.ToString());
                 }
                 decimal final = 0;
                 foreach (DataGridViewRow row in dgvDetalleArticulo.Rows)
@@ -136,6 +138,8 @@ namespace ComercioWIN
                     DetalleArticulo ArticuloVendido = new DetalleArticulo();
                     DetalleVentaNegocio negocio = new DetalleVentaNegocio();
                     FacturaVenta factura = new FacturaVenta();
+                    Articulo ART = new Articulo();
+                    ArticuloNegocio articulonegocio = new ArticuloNegocio();
 
                     factura.cliente = clienteLocal;
                     factura.idfact = negocio.NumFactura();
@@ -147,9 +151,13 @@ namespace ComercioWIN
                         ArticuloVendido.articulo = new Articulo();
                         ArticuloVendido.articulo.id = Convert.ToInt32(row3.Cells["Cod"].Value);
                         ArticuloVendido.preciounit = Convert.ToDecimal(row3.Cells["Precio uni"].Value);
-                        ArticuloVendido.cantidad = Convert.ToDecimal(row3.Cells["Cantidad"].Value);
+                        ArticuloVendido.cantidad = Convert.ToInt32(row3.Cells["Cantidad"].Value);
                         ArticuloVendido.idfactura = factura.idfact;
+                        ART.id = Convert.ToInt32(row3.Cells["Cod"].Value);
+                        ART.StockActual = Convert.ToInt32(row3.Cells["Cantidad"].Value);
                         negocio.AgregarArticulo(ArticuloVendido, factura.idfact);
+                        //articulonegocio.bajarStock(ART);
+                        
                     }
                     Close();
                     
@@ -181,10 +189,7 @@ namespace ComercioWIN
 
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8 && e.KeyChar != 13 && e.KeyChar == ',' && e.KeyChar == '.')
-            {
-                e.Handled = true;
-            }
+            ValidarLetrasNumeros.validarNumeros(e);
         }
 
         private void txtcliente_TextChanged(object sender, EventArgs e)

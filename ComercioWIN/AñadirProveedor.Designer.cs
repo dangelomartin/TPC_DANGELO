@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AñadirProveedor));
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.cboProvincia = new System.Windows.Forms.ComboBox();
@@ -52,20 +53,22 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Location = new System.Drawing.Point(238, 256);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 50;
+            this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Location = new System.Drawing.Point(126, 256);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 49;
+            this.btnAceptar.TabIndex = 10;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -76,7 +79,7 @@
             this.cboProvincia.Location = new System.Drawing.Point(112, 112);
             this.cboProvincia.Name = "cboProvincia";
             this.cboProvincia.Size = new System.Drawing.Size(168, 21);
-            this.cboProvincia.TabIndex = 4;
+            this.cboProvincia.TabIndex = 5;
             // 
             // cboContribuyente
             // 
@@ -84,14 +87,15 @@
             this.cboContribuyente.Location = new System.Drawing.Point(112, 193);
             this.cboContribuyente.Name = "cboContribuyente";
             this.cboContribuyente.Size = new System.Drawing.Size(243, 21);
-            this.cboContribuyente.TabIndex = 7;
+            this.cboContribuyente.TabIndex = 8;
             // 
             // txtContacto
             // 
             this.txtContacto.Location = new System.Drawing.Point(112, 220);
+            this.txtContacto.MaxLength = 50;
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(243, 20);
-            this.txtContacto.TabIndex = 8;
+            this.txtContacto.TabIndex = 9;
             // 
             // lblObservaciones
             // 
@@ -105,9 +109,10 @@
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(112, 139);
+            this.txtTelefono.MaxLength = 30;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(243, 20);
-            this.txtTelefono.TabIndex = 5;
+            this.txtTelefono.TabIndex = 6;
             // 
             // lblTelefono
             // 
@@ -121,9 +126,10 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(112, 165);
+            this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(243, 20);
-            this.txtEmail.TabIndex = 6;
+            this.txtEmail.TabIndex = 7;
             // 
             // lblEmail
             // 
@@ -146,9 +152,11 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(112, 32);
+            this.txtNombre.MaxLength = 40;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(243, 20);
-            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TabIndex = 2;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // lblNombre
             // 
@@ -162,9 +170,10 @@
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(112, 58);
+            this.txtDireccion.MaxLength = 50;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(243, 20);
-            this.txtDireccion.TabIndex = 2;
+            this.txtDireccion.TabIndex = 3;
             // 
             // lblDireccion
             // 
@@ -178,9 +187,11 @@
             // txtCP
             // 
             this.txtCP.Location = new System.Drawing.Point(112, 87);
+            this.txtCP.MaxLength = 5;
             this.txtCP.Name = "txtCP";
             this.txtCP.Size = new System.Drawing.Size(89, 20);
-            this.txtCP.TabIndex = 3;
+            this.txtCP.TabIndex = 4;
+            this.txtCP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCP_KeyPress);
             // 
             // lblCP
             // 
@@ -203,9 +214,11 @@
             // txtCuit
             // 
             this.txtCuit.Location = new System.Drawing.Point(112, 6);
+            this.txtCuit.MaxLength = 30;
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(133, 20);
-            this.txtCuit.TabIndex = 0;
+            this.txtCuit.TabIndex = 1;
+            this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuit_KeyPress);
             // 
             // lblCuit
             // 
@@ -220,7 +233,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(378, 288);
+            this.ControlBox = false;
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.cboProvincia);
@@ -241,7 +257,11 @@
             this.Controls.Add(this.lblProvincia);
             this.Controls.Add(this.txtCuit);
             this.Controls.Add(this.lblCuit);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AñadirProveedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AñadirProveedor";
             this.Load += new System.EventHandler(this.AñadirProveedor_Load);
             this.ResumeLayout(false);

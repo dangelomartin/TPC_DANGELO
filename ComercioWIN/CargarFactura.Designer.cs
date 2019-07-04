@@ -85,7 +85,8 @@
             this.txtComprobante.MaxLength = 8;
             this.txtComprobante.Name = "txtComprobante";
             this.txtComprobante.Size = new System.Drawing.Size(100, 20);
-            this.txtComprobante.TabIndex = 2;
+            this.txtComprobante.TabIndex = 3;
+            this.txtComprobante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtComprobante_KeyPress);
             // 
             // label5
             // 
@@ -105,7 +106,8 @@
             this.cboCondicion.Location = new System.Drawing.Point(122, 70);
             this.cboCondicion.Name = "cboCondicion";
             this.cboCondicion.Size = new System.Drawing.Size(133, 21);
-            this.cboCondicion.TabIndex = 4;
+            this.cboCondicion.TabIndex = 5;
+            this.cboCondicion.Text = "Efectivo";
             // 
             // label6
             // 
@@ -119,9 +121,10 @@
             // txtMonto
             // 
             this.txtMonto.Location = new System.Drawing.Point(347, 73);
+            this.txtMonto.MaxLength = 10;
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(100, 20);
-            this.txtMonto.TabIndex = 5;
+            this.txtMonto.TabIndex = 6;
             this.txtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonto_KeyPress);
             // 
             // lblMonto
@@ -138,7 +141,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(386, 36);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 20);
-            this.dtpFecha.TabIndex = 3;
+            this.dtpFecha.TabIndex = 4;
             // 
             // btnBuscarProo
             // 
@@ -148,26 +151,28 @@
             this.btnBuscarProo.Location = new System.Drawing.Point(12, 16);
             this.btnBuscarProo.Name = "btnBuscarProo";
             this.btnBuscarProo.Size = new System.Drawing.Size(39, 39);
-            this.btnBuscarProo.TabIndex = 0;
+            this.btnBuscarProo.TabIndex = 1;
             this.btnBuscarProo.UseVisualStyleBackColor = true;
             this.btnBuscarProo.Click += new System.EventHandler(this.btnBuscarProo_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(655, 344);
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Location = new System.Drawing.Point(511, 344);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 29;
+            this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(655, 312);
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Location = new System.Drawing.Point(511, 312);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 30;
+            this.btnAceptar.TabIndex = 11;
             this.btnAceptar.Text = "ACEPTAR";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -180,7 +185,9 @@
             this.dgvDetalleArticulo.Location = new System.Drawing.Point(19, 116);
             this.dgvDetalleArticulo.Name = "dgvDetalleArticulo";
             this.dgvDetalleArticulo.ReadOnly = true;
-            this.dgvDetalleArticulo.Size = new System.Drawing.Size(399, 150);
+            this.dgvDetalleArticulo.RowHeadersVisible = false;
+            this.dgvDetalleArticulo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDetalleArticulo.Size = new System.Drawing.Size(305, 150);
             this.dgvDetalleArticulo.TabIndex = 31;
             // 
             // txtNombreproov
@@ -197,14 +204,16 @@
             this.txtPuesto.MaxLength = 4;
             this.txtPuesto.Name = "txtPuesto";
             this.txtPuesto.Size = new System.Drawing.Size(46, 20);
-            this.txtPuesto.TabIndex = 32;
+            this.txtPuesto.TabIndex = 2;
+            this.txtPuesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPuesto_KeyPress);
             // 
             // btnAgregarArt
             // 
+            this.btnAgregarArt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarArt.Location = new System.Drawing.Point(19, 286);
             this.btnAgregarArt.Name = "btnAgregarArt";
             this.btnAgregarArt.Size = new System.Drawing.Size(118, 23);
-            this.btnAgregarArt.TabIndex = 33;
+            this.btnAgregarArt.TabIndex = 7;
             this.btnAgregarArt.Text = "Buscar Articulo";
             this.btnAgregarArt.UseVisualStyleBackColor = true;
             this.btnAgregarArt.Click += new System.EventHandler(this.btnAgregarArt_Click);
@@ -212,14 +221,17 @@
             // txtCantidad
             // 
             this.txtCantidad.Location = new System.Drawing.Point(304, 328);
+            this.txtCantidad.MaxLength = 4;
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(73, 20);
-            this.txtCantidad.TabIndex = 34;
+            this.txtCantidad.TabIndex = 9;
             this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // btnQuitar
             // 
-            this.btnQuitar.Location = new System.Drawing.Point(600, 116);
+            this.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuitar.Location = new System.Drawing.Point(456, 116);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(130, 23);
             this.btnQuitar.TabIndex = 35;
@@ -229,10 +241,11 @@
             // 
             // btnAñadirLista
             // 
+            this.btnAñadirLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAñadirLista.Location = new System.Drawing.Point(386, 325);
             this.btnAñadirLista.Name = "btnAñadirLista";
             this.btnAñadirLista.Size = new System.Drawing.Size(117, 23);
-            this.btnAñadirLista.TabIndex = 36;
+            this.btnAñadirLista.TabIndex = 10;
             this.btnAñadirLista.Text = "Añadir a la Lista";
             this.btnAñadirLista.UseVisualStyleBackColor = true;
             this.btnAñadirLista.Click += new System.EventHandler(this.btnAñadirLista_Click);
@@ -264,11 +277,12 @@
             // 
             // btnModificarCosto
             // 
+            this.btnModificarCosto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarCosto.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarCosto.Location = new System.Drawing.Point(220, 354);
             this.btnModificarCosto.Name = "btnModificarCosto";
             this.btnModificarCosto.Size = new System.Drawing.Size(86, 22);
-            this.btnModificarCosto.TabIndex = 41;
+            this.btnModificarCosto.TabIndex = 8;
             this.btnModificarCosto.Text = "Modificar Costo";
             this.btnModificarCosto.UseVisualStyleBackColor = true;
             this.btnModificarCosto.Click += new System.EventHandler(this.btnModificarCosto_Click);
@@ -336,7 +350,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(758, 379);
+            this.ClientSize = new System.Drawing.Size(606, 379);
             this.Controls.Add(this.lblIngrCant);
             this.Controls.Add(this.lblSelecArt);
             this.Controls.Add(this.lblDescripcion);

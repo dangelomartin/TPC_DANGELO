@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio.Models;
 using Dominio;
 using Negocio;
 
@@ -48,6 +49,8 @@ namespace ComercioWIN
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
+            if(ValidateC())
+            {
             try
             {
                 MarcaNegocio negocio = new MarcaNegocio();
@@ -71,11 +74,35 @@ namespace ComercioWIN
 
                 MessageBox.Show(ex.ToString());
             }
+            }
         }
 
         private void btnCerrar_Click_1(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        ErrorProvider ErrorProvider = new ErrorProvider();
+        private bool ValidateC()
+        {
+            bool Valid = true;
+
+            if (txtDescripcion.Text == "")
+            {
+                Valid = false;
+                ErrorProvider.SetError(txtDescripcion, "Campo Incompleto");
+            }
+
+            return Valid;
         }
     }
 }

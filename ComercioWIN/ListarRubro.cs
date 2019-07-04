@@ -22,6 +22,7 @@ namespace ComercioWIN
 
         private void ListarRubro_Load(object sender, EventArgs e)
         {
+            
             Cargarlista();
         }
 
@@ -31,6 +32,8 @@ namespace ComercioWIN
             ListaRubroLocal = negocio.ListarRubros();
             dgvLista.DataSource = ListaRubroLocal;
             dgvLista.Columns[2].Visible = false;
+            dgvLista.Columns[0].Visible = false;
+            dgvLista.Columns[1].Width = 250 ;
         }
 
         private void bntAgregar_Click(object sender, EventArgs e)
@@ -65,6 +68,30 @@ namespace ComercioWIN
                 Cargarlista();
             }
 
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBusqueda.Text == "")
+            {
+                dgvLista.DataSource = ListaRubroLocal;
+
+            }
+            else
+            {
+                if (txtBusqueda.Text.Length >= 2)
+                {
+                    List<Rubro> lista;
+                    lista = ListaRubroLocal.FindAll(X => X.Descripcion.ToUpper().Contains(txtBusqueda.Text.ToUpper()));
+                    dgvLista.DataSource = lista;
+                }
+
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

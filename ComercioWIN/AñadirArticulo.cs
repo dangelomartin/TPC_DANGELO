@@ -39,12 +39,11 @@ namespace ComercioWIN
             {
                 cboMarca.DataSource = marcaNegocio.ListarMarcas();
                 cboRubro.DataSource = rubroNegocio.ListarRubros();
-                cboIva.DataSource = ivaNegocio.ListarIva();
                 cboProveedor.DataSource = proveedorNegocio.ListarProveedores();
 
                 if(articuloLocal!=null)
                 {
-                    txtDescri1.Text = articuloLocal.Descripcion1;
+                    txtDescri1.Text = articuloLocal.Descripcion;
                     txtCodBarras.Text = articuloLocal.codBarras.ToString();
                     cboMarca.SelectedItem = cboMarca.FindString(articuloLocal.Marca.Descripcion);
                     cboRubro.SelectedItem = cboRubro.FindString(articuloLocal.Rubro.Descripcion);
@@ -52,11 +51,6 @@ namespace ComercioWIN
                     txtStockMin.Text = articuloLocal.StockMin.ToString();
                     txtStockMax.Text = articuloLocal.StockMax.ToString();
                     txtCosto.Text = articuloLocal.Costo.ToString();
-                    cboIva.SelectedItem = cboIva.FindString(articuloLocal.Iva.Descripcion);
-                    txtDes1.Text = articuloLocal.Descuento1.ToString();
-                    txtDes2.Text = articuloLocal.Descuento2.ToString();
-                    txtDes3.Text = articuloLocal.Descuento3.ToString();
-                    txtDes4.Text = articuloLocal.Descuento4.ToString();
                     txtGanancia.Text = articuloLocal.Ganancia.ToString();
                 }
             }
@@ -76,7 +70,7 @@ namespace ComercioWIN
             {   if (articuloLocal == null)
                     articuloLocal = new Articulo();
                     string costo = txtCosto.Text.Replace(".", ",");
-                articuloLocal.Descripcion1 = txtDescri1.Text.ToUpper();
+                articuloLocal.Descripcion = txtDescri1.Text.ToUpper();
                 articuloLocal.codBarras = (int.Parse(txtCodBarras.Text));
                 articuloLocal.Marca = (Marca)cboMarca.SelectedItem;
                 articuloLocal.Rubro = (Rubro)cboRubro.SelectedItem;
@@ -84,11 +78,7 @@ namespace ComercioWIN
                 articuloLocal.StockMin = int.Parse(txtStockMin.Text);
                 articuloLocal.StockMax = int.Parse(txtStockMax.Text);
                 articuloLocal.Costo = decimal.Parse(costo);
-                articuloLocal.Iva = (Iva)cboIva.SelectedItem;
-                articuloLocal.Descuento1 = int.Parse(txtDes1.Text);
-                articuloLocal.Descuento2 = int.Parse(txtDes2.Text);
-                articuloLocal.Descuento3 = int.Parse(txtDes3.Text);
-                articuloLocal.Descuento4 = int.Parse(txtDes4.Text);
+                
                 articuloLocal.Ganancia = int.Parse(txtGanancia.Text);
 
 
@@ -128,6 +118,7 @@ namespace ComercioWIN
                 Valid = false;
                 ErrorProvider.SetError(txtDescri1, "Campo Incompleto");
             }
+
             if (txtCodBarras.Text == "")
             {
                 Valid = false;
@@ -138,26 +129,7 @@ namespace ComercioWIN
                 Valid = false;
                 ErrorProvider.SetError(txtCosto, "Campo Incompleto");
             }
-            if (txtDes1.Text == "")
-            {
-                Valid = false;
-                ErrorProvider.SetError(txtDes1, "Campo Incompleto");
-            }
-            if (txtDes2.Text == "")
-            {
-                Valid = false;
-                ErrorProvider.SetError(txtDes2, "Campo Incompleto");
-            }
-            if (txtDes3.Text == "")
-            {
-                Valid = false;
-                ErrorProvider.SetError(txtDes3, "Campo Incompleto");
-            }
-            if (txtDes4.Text == "")
-            {
-                Valid = false;
-                ErrorProvider.SetError(txtDes4, "Campo Incompleto");
-            }
+           
             if (txtGanancia.Text == "")
             {
                 Valid = false;
@@ -180,12 +152,48 @@ namespace ComercioWIN
 
         private void txtCodBarras_KeyPress(object sender, KeyPressEventArgs e)
         {
-            ValidarLetrasNumeros.validarDecimal(e);
+            ValidarLetrasNumeros.validarNumeros(e);
+         
         }
 
         private void txtDescri1_KeyPress(object sender, KeyPressEventArgs e)
         {
             
+        }
+
+        private void txtCodBarras_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtStockMax_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtStockMax_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarLetrasNumeros.validarNumeros(e);
+        }
+
+        private void txtStockMin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarLetrasNumeros.validarNumeros(e);
+        }
+
+        private void txtCosto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarLetrasNumeros.validarDecimal(e);
+        }
+
+        private void txtGanancia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarLetrasNumeros.validarNumeros(e);
+        }
+
+        private void txtDescri1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

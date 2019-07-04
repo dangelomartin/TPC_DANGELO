@@ -124,7 +124,7 @@ namespace Negocio
                 conexion.ConnectionString = AccesoDatos.AccesoDatosMaster.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "insert into CLIENTES (Nombre, direccion,cp,idprovincia,telefono,email,idcontribuyente,cuit,observaciones,estado) values";
-                comando.CommandText += "('" + nuevo.Nombre + "', '" + nuevo.Direccion + "', '" + nuevo.CP + "', '" + nuevo.Provincia.id.ToString() + "', '" + nuevo.Telefono + "', '" + nuevo.Email + "', '" + nuevo.contribuyente.id.ToString() + "','" + nuevo.Cuit + "', '" + nuevo.Observaciones + "', '" + nuevo.estado + "')";
+                comando.CommandText += "('" + nuevo.Nombre + "', '" + nuevo.Direccion + "', '" + nuevo.CP + "', '" + nuevo.Provincia.id.ToString() + "', '" + nuevo.Telefono + "', '" + nuevo.Email + "', '" + nuevo.contribuyente.id.ToString() + "','" + nuevo.Cuit + "', '" + nuevo.Observaciones + "', '" + 1 + "')";
                 comando.Connection = conexion;
                 conexion.Open();
 

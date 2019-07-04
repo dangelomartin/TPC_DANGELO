@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Factura));
             this.txtcliente = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAgregaArt = new System.Windows.Forms.Button();
@@ -108,12 +109,13 @@
             this.dgvDetalleArticulo.AllowUserToAddRows = false;
             this.dgvDetalleArticulo.AllowUserToDeleteRows = false;
             this.dgvDetalleArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetalleArticulo.Location = new System.Drawing.Point(22, 155);
+            this.dgvDetalleArticulo.Location = new System.Drawing.Point(22, 120);
+            this.dgvDetalleArticulo.MultiSelect = false;
             this.dgvDetalleArticulo.Name = "dgvDetalleArticulo";
             this.dgvDetalleArticulo.ReadOnly = true;
             this.dgvDetalleArticulo.RowHeadersVisible = false;
             this.dgvDetalleArticulo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalleArticulo.Size = new System.Drawing.Size(726, 150);
+            this.dgvDetalleArticulo.Size = new System.Drawing.Size(726, 185);
             this.dgvDetalleArticulo.TabIndex = 7;
             this.dgvDetalleArticulo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleArticulo_CellContentClick);
             // 
@@ -192,6 +194,7 @@
             this.Controls.Add(this.btnAgregaArt);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtcliente);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Factura";
             this.Text = "Factura";
             this.Load += new System.EventHandler(this.Factura_Load);

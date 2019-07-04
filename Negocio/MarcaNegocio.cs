@@ -23,7 +23,7 @@ namespace Negocio
             {
                 conexion.ConnectionString = AccesoDatosMaster.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select m.id, m.descripcion from marcas as m";
+                comando.CommandText = "select m.id, m.descripcion from marcas as m where m.estado = 1";
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -102,7 +102,7 @@ namespace Negocio
                 conexion.ConnectionString = AccesoDatos.AccesoDatosMaster.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "insert into Marcas (Descripcion,estado) values";
-                comando.CommandText += "('" + nuevo.Descripcion + "', '" + nuevo.estado + "')";
+                comando.CommandText += "('" + nuevo.Descripcion + "', '" + 1 + "')";
                 comando.Connection = conexion;
                 conexion.Open();
 

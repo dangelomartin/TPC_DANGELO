@@ -47,7 +47,6 @@ namespace ComercioWIN
                     txtEmail.Text = ClienteLocal.Email;
                     cboContribuyente.SelectedItem = cboContribuyente.FindString(ClienteLocal.contribuyente.Descripcion);
                     txtObservaciones.Text = ClienteLocal.Observaciones;
-                    ckbActivo.Checked = ClienteLocal.estado;
 
                 }
                     
@@ -86,7 +85,7 @@ namespace ComercioWIN
                 ClienteLocal.Email = txtEmail.Text.ToUpper();
                 ClienteLocal.contribuyente = (Contribuyente)cboContribuyente.SelectedItem;
                 ClienteLocal.Observaciones = txtObservaciones.Text.ToUpper();
-                ClienteLocal.estado = ckbActivo.Checked;
+                
 
             
             if(ClienteLocal.id!=0)

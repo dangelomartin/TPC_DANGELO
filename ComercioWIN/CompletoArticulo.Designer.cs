@@ -28,16 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompletoArticulo));
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -47,18 +43,15 @@
             this.txtStockmax = new System.Windows.Forms.TextBox();
             this.txtStockmin = new System.Windows.Forms.TextBox();
             this.txtCost = new System.Windows.Forms.TextBox();
-            this.txtDesc1 = new System.Windows.Forms.TextBox();
-            this.txtDesc2 = new System.Windows.Forms.TextBox();
-            this.txtDesc3 = new System.Windows.Forms.TextBox();
-            this.txtDesc4 = new System.Windows.Forms.TextBox();
             this.txtGanancia = new System.Windows.Forms.TextBox();
             this.bntAceptar = new System.Windows.Forms.Button();
             this.txtProveedor = new System.Windows.Forms.TextBox();
             this.txtRubro = new System.Windows.Forms.TextBox();
             this.txtMarca = new System.Windows.Forms.TextBox();
-            this.txtIva = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtStockActual = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -97,64 +90,19 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Stock Min";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(357, 40);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(22, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Iva";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(345, 14);
+            this.label7.Location = new System.Drawing.Point(44, 237);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(34, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "Costo";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(314, 71);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 13);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Descuento 1";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(314, 100);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 13);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Descuento 2";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(314, 126);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(68, 13);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Descuento 3";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(314, 151);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(68, 13);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Descuento 4";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(326, 175);
+            this.label12.Location = new System.Drawing.Point(25, 265);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(53, 13);
             this.label12.TabIndex = 11;
@@ -221,55 +169,24 @@
             // 
             // txtCost
             // 
-            this.txtCost.Location = new System.Drawing.Point(385, 10);
+            this.txtCost.Location = new System.Drawing.Point(84, 233);
             this.txtCost.Name = "txtCost";
             this.txtCost.ReadOnly = true;
-            this.txtCost.Size = new System.Drawing.Size(81, 20);
+            this.txtCost.Size = new System.Drawing.Size(172, 20);
             this.txtCost.TabIndex = 23;
-            // 
-            // txtDesc1
-            // 
-            this.txtDesc1.Location = new System.Drawing.Point(385, 68);
-            this.txtDesc1.Name = "txtDesc1";
-            this.txtDesc1.ReadOnly = true;
-            this.txtDesc1.Size = new System.Drawing.Size(81, 20);
-            this.txtDesc1.TabIndex = 25;
-            // 
-            // txtDesc2
-            // 
-            this.txtDesc2.Location = new System.Drawing.Point(385, 94);
-            this.txtDesc2.Name = "txtDesc2";
-            this.txtDesc2.ReadOnly = true;
-            this.txtDesc2.Size = new System.Drawing.Size(81, 20);
-            this.txtDesc2.TabIndex = 26;
-            // 
-            // txtDesc3
-            // 
-            this.txtDesc3.Location = new System.Drawing.Point(385, 123);
-            this.txtDesc3.Name = "txtDesc3";
-            this.txtDesc3.ReadOnly = true;
-            this.txtDesc3.Size = new System.Drawing.Size(81, 20);
-            this.txtDesc3.TabIndex = 27;
-            // 
-            // txtDesc4
-            // 
-            this.txtDesc4.Location = new System.Drawing.Point(385, 148);
-            this.txtDesc4.Name = "txtDesc4";
-            this.txtDesc4.ReadOnly = true;
-            this.txtDesc4.Size = new System.Drawing.Size(81, 20);
-            this.txtDesc4.TabIndex = 28;
             // 
             // txtGanancia
             // 
-            this.txtGanancia.Location = new System.Drawing.Point(385, 172);
+            this.txtGanancia.Location = new System.Drawing.Point(84, 261);
             this.txtGanancia.Name = "txtGanancia";
             this.txtGanancia.ReadOnly = true;
-            this.txtGanancia.Size = new System.Drawing.Size(81, 20);
+            this.txtGanancia.Size = new System.Drawing.Size(172, 20);
             this.txtGanancia.TabIndex = 29;
             // 
             // bntAceptar
             // 
-            this.bntAceptar.Location = new System.Drawing.Point(225, 228);
+            this.bntAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bntAceptar.Location = new System.Drawing.Point(181, 323);
             this.bntAceptar.Name = "bntAceptar";
             this.bntAceptar.Size = new System.Drawing.Size(75, 23);
             this.bntAceptar.TabIndex = 30;
@@ -301,18 +218,10 @@
             this.txtMarca.Size = new System.Drawing.Size(174, 20);
             this.txtMarca.TabIndex = 36;
             // 
-            // txtIva
-            // 
-            this.txtIva.Location = new System.Drawing.Point(385, 37);
-            this.txtIva.Name = "txtIva";
-            this.txtIva.ReadOnly = true;
-            this.txtIva.Size = new System.Drawing.Size(81, 20);
-            this.txtIva.TabIndex = 39;
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(304, 201);
+            this.label16.Location = new System.Drawing.Point(3, 291);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(75, 13);
             this.label16.TabIndex = 40;
@@ -320,29 +229,44 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(385, 199);
+            this.txtPrecio.Location = new System.Drawing.Point(84, 288);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.ReadOnly = true;
-            this.txtPrecio.Size = new System.Drawing.Size(81, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(172, 20);
             this.txtPrecio.TabIndex = 41;
+            // 
+            // txtStockActual
+            // 
+            this.txtStockActual.Location = new System.Drawing.Point(84, 205);
+            this.txtStockActual.Name = "txtStockActual";
+            this.txtStockActual.ReadOnly = true;
+            this.txtStockActual.Size = new System.Drawing.Size(172, 20);
+            this.txtStockActual.TabIndex = 43;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 208);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.TabIndex = 42;
+            this.label2.Text = "StockActual";
             // 
             // CompletoArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 267);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(278, 358);
+            this.Controls.Add(this.txtStockActual);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.txtIva);
             this.Controls.Add(this.txtProveedor);
             this.Controls.Add(this.txtRubro);
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.bntAceptar);
             this.Controls.Add(this.txtGanancia);
-            this.Controls.Add(this.txtDesc4);
-            this.Controls.Add(this.txtDesc3);
-            this.Controls.Add(this.txtDesc2);
-            this.Controls.Add(this.txtDesc1);
             this.Controls.Add(this.txtCost);
             this.Controls.Add(this.txtStockmin);
             this.Controls.Add(this.txtStockmax);
@@ -352,16 +276,12 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CompletoArticulo";
             this.Text = "CompletoArticulo";
             this.Load += new System.EventHandler(this.CompletoArticulo_Load);
@@ -376,12 +296,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
@@ -391,17 +306,14 @@
         private System.Windows.Forms.TextBox txtStockmax;
         private System.Windows.Forms.TextBox txtStockmin;
         private System.Windows.Forms.TextBox txtCost;
-        private System.Windows.Forms.TextBox txtDesc1;
-        private System.Windows.Forms.TextBox txtDesc2;
-        private System.Windows.Forms.TextBox txtDesc3;
-        private System.Windows.Forms.TextBox txtDesc4;
         private System.Windows.Forms.TextBox txtGanancia;
         private System.Windows.Forms.Button bntAceptar;
         private System.Windows.Forms.TextBox txtProveedor;
         private System.Windows.Forms.TextBox txtRubro;
         private System.Windows.Forms.TextBox txtMarca;
-        private System.Windows.Forms.TextBox txtIva;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtStockActual;
+        private System.Windows.Forms.Label label2;
     }
 }

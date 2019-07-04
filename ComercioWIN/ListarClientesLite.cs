@@ -57,7 +57,12 @@ namespace ComercioWIN
                 dgvClientesLite.Columns[7].Visible = false;
                 dgvClientesLite.Columns[9].Visible = false;
                 dgvClientesLite.Columns[10].Visible = false;
-                
+                dgvClientesLite.Columns[0].Width = 40;
+                dgvClientesLite.Columns[1].Width = 300;
+                dgvClientesLite.Columns[8].Width = 100;
+
+
+
 
 
             }

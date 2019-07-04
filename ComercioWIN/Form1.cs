@@ -64,7 +64,8 @@ namespace ComercioWIN
 
         private void btnMarca_Click(object sender, EventArgs e)
         {
-            
+            ListarMarcas frm = new ListarMarcas();
+            frm.ShowDialog();
         }
 
         private void btnCargarFactura_Click(object sender, EventArgs e)

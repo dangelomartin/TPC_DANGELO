@@ -35,7 +35,8 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnVerDatos = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnSeleccionar = new System.Windows.Forms.Button();
+            this.bntcerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarArticulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,19 +46,13 @@
             this.dgvListarArticulos.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dgvListarArticulos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvListarArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvListarArticulos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvListarArticulos.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvListarArticulos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvListarArticulos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvListarArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListarArticulos.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgvListarArticulos.Location = new System.Drawing.Point(12, 10);
             this.dgvListarArticulos.MultiSelect = false;
             this.dgvListarArticulos.Name = "dgvListarArticulos";
             this.dgvListarArticulos.ReadOnly = true;
             this.dgvListarArticulos.RowHeadersVisible = false;
-            this.dgvListarArticulos.Size = new System.Drawing.Size(492, 269);
+            this.dgvListarArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListarArticulos.Size = new System.Drawing.Size(505, 215);
             this.dgvListarArticulos.TabIndex = 0;
             // 
             // btnAgregar
@@ -108,31 +103,48 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
             // 
-            // btnCerrar
+            // btnSeleccionar
             // 
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(524, 231);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(51, 51);
-            this.btnCerrar.TabIndex = 6;
-            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeleccionar.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.Image")));
+            this.btnSeleccionar.Location = new System.Drawing.Point(237, 231);
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.Size = new System.Drawing.Size(51, 51);
+            this.btnSeleccionar.TabIndex = 6;
+            this.btnSeleccionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSeleccionar.UseVisualStyleBackColor = true;
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // bntcerrar
+            // 
+            this.bntcerrar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.bntcerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bntcerrar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bntcerrar.Location = new System.Drawing.Point(500, 256);
+            this.bntcerrar.Name = "bntcerrar";
+            this.bntcerrar.Size = new System.Drawing.Size(75, 23);
+            this.bntcerrar.TabIndex = 7;
+            this.bntcerrar.Text = "CERRAR";
+            this.bntcerrar.UseVisualStyleBackColor = false;
+            this.bntcerrar.Click += new System.EventHandler(this.bntcerrar_Click);
             // 
             // ListarArticulosLite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(587, 291);
-            this.Controls.Add(this.btnCerrar);
+            this.ControlBox = false;
+            this.Controls.Add(this.bntcerrar);
+            this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnVerDatos);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvListarArticulos);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ListarArticulosLite";
@@ -151,6 +163,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnVerDatos;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btnSeleccionar;
+        private System.Windows.Forms.Button bntcerrar;
     }
 }
