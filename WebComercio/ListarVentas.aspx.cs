@@ -17,7 +17,6 @@ namespace WebComercio
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            
         }
 
         public void cargartodo()
@@ -26,6 +25,9 @@ namespace WebComercio
             DataSet ds = ac.dataSet("select d.idFactura as NumFactura, d.Fecha, c.nombre as Cliente, d.importe from DetalleVenta as d inner join CLIENTES as c on c.id=d.IdCliente");
             dlListaVentas.DataSource = ds.Tables[0];
             dlListaVentas.DataBind();
+
+            if (null != this.dlListaVentas.HeaderRow)
+                this.dlListaVentas.HeaderRow.TableSection = TableRowSection.TableHeader;
         }
 
         protected void dlListaVentas_SelectedIndexChanged(object sender, EventArgs e)
@@ -53,6 +55,10 @@ namespace WebComercio
                 dlListaVentas.DataSource = ds.Tables[0];
                 dlListaVentas.DataBind();
             }
+
+            if (null != this.dlListaVentas.HeaderRow)
+                this.dlListaVentas.HeaderRow.TableSection = TableRowSection.TableHeader;
+
             desde = null;
             hasta = null;
         }
@@ -78,7 +84,9 @@ namespace WebComercio
                 dlListaVentas.DataSource = ds.Tables[0];
                 dlListaVentas.DataBind();
             }
-            
+
+            if (null != this.dlListaVentas.HeaderRow)
+                this.dlListaVentas.HeaderRow.TableSection = TableRowSection.TableHeader;
         }
     }
 }

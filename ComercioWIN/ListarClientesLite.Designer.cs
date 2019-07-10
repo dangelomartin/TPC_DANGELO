@@ -37,6 +37,7 @@
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgvClientesLite = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientesLite)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,6 +127,17 @@
             this.dgvClientesLite.Size = new System.Drawing.Size(445, 199);
             this.dgvClientesLite.TabIndex = 9;
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(12, 283);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Cerrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // ListarClientesLite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -133,6 +145,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(530, 317);
+            this.ControlBox = false;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvClientesLite);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblBusqueda);
@@ -145,7 +159,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ListarClientesLite";
-            this.Text = "ListarClientesLite";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Lista de Clientes";
             this.Load += new System.EventHandler(this.ListarClientesLite_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientesLite)).EndInit();
             this.ResumeLayout(false);
@@ -162,5 +177,6 @@
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgvClientesLite;
+        private System.Windows.Forms.Button button1;
     }
 }

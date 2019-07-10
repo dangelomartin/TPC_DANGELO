@@ -49,7 +49,6 @@
             this.cboProvincia = new System.Windows.Forms.ComboBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnXCuit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCuit
@@ -67,6 +66,7 @@
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(133, 20);
             this.txtCuit.TabIndex = 1;
+            this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuit_KeyPress);
             // 
             // lblProvincia
             // 
@@ -220,18 +220,6 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // btnXCuit
-            // 
-            this.btnXCuit.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnXCuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXCuit.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnXCuit.Image = ((System.Drawing.Image)(resources.GetObject("btnXCuit.Image")));
-            this.btnXCuit.Location = new System.Drawing.Point(251, 4);
-            this.btnXCuit.Name = "btnXCuit";
-            this.btnXCuit.Size = new System.Drawing.Size(29, 23);
-            this.btnXCuit.TabIndex = 29;
-            this.btnXCuit.UseVisualStyleBackColor = false;
-            // 
             // AñadirCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,7 +228,6 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(364, 290);
             this.ControlBox = false;
-            this.Controls.Add(this.btnXCuit);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.cboProvincia);
@@ -266,7 +253,7 @@
             this.MinimizeBox = false;
             this.Name = "AñadirCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AñadirCliente";
+            this.Text = "Añadir Cliente";
             this.Load += new System.EventHandler(this.AñadirCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -295,6 +282,5 @@
         private System.Windows.Forms.ComboBox cboProvincia;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnXCuit;
     }
 }

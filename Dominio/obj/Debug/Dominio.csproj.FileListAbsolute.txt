@@ -4,3 +4,9 @@ C:\Users\Martin\source\repos\COMERCIO\Dominio\obj\Debug\Dominio.csprojAssemblyRe
 C:\Users\Martin\source\repos\COMERCIO\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\Martin\source\repos\COMERCIO\Dominio\obj\Debug\Dominio.dll
 C:\Users\Martin\source\repos\COMERCIO\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Martin\Desktop\TPC-DANGELO\TPC_DANGELO\Dominio\bin\Debug\Dominio.dll
+C:\Users\Martin\Desktop\TPC-DANGELO\TPC_DANGELO\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Martin\Desktop\TPC-DANGELO\TPC_DANGELO\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\Martin\Desktop\TPC-DANGELO\TPC_DANGELO\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\TPC-DANGELO\TPC_DANGELO\Dominio\obj\Debug\Dominio.dll
+C:\Users\Martin\Desktop\TPC-DANGELO\TPC_DANGELO\Dominio\obj\Debug\Dominio.pdb

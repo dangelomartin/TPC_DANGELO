@@ -62,6 +62,10 @@ namespace ComercioWIN
                 dgvLista.Columns[8].Visible = false;
                 dgvLista.Columns[9].Visible = false;
                 dgvLista.Columns[10].Visible = false;
+                dgvLista.Columns[0].Width = 50;
+                dgvLista.Columns[1].Width = 200;
+                dgvLista.Columns[5].Width = 100;
+                dgvLista.Columns[7].Width = 100;
 
             }
             catch (Exception ex)
@@ -184,6 +188,11 @@ namespace ComercioWIN
 
                 throw;
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Close();
         }
         //public Cliente ClienteSelect(bool estado)
         //{

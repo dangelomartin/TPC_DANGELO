@@ -27,6 +27,11 @@
               <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
               <Mapping SourceColumn="Unit" DataSetColumn="Unit" />
               <Mapping SourceColumn="total" DataSetColumn="total" />
+              <Mapping SourceColumn="Cliente" DataSetColumn="Cliente" />
+              <Mapping SourceColumn="CUIT" DataSetColumn="CUIT" />
+              <Mapping SourceColumn="Final" DataSetColumn="Final" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="NumFact" DataSetColumn="NumFact" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -41,7 +46,7 @@
         <xs:element name="Reporte" msprop:Generator_TableClassName="ReporteDataTable" msprop:Generator_TableVarName="tableReporte" msprop:Generator_TablePropName="Reporte" msprop:Generator_RowDeletingName="ReporteRowDeleting" msprop:Generator_RowChangingName="ReporteRowChanging" msprop:Generator_RowEvHandlerName="ReporteRowChangeEventHandler" msprop:Generator_RowDeletedName="ReporteRowDeleted" msprop:Generator_UserTableName="Reporte" msprop:Generator_RowChangedName="ReporteRowChanged" msprop:Generator_RowEvArgName="ReporteRowChangeEvent" msprop:Generator_RowClassName="ReporteRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Cant" msprop:Generator_ColumnVarNameInTable="columnCant" msprop:Generator_ColumnPropNameInRow="Cant" msprop:Generator_ColumnPropNameInTable="CantColumn" msprop:Generator_UserColumnName="Cant" type="xs:double" />
+              <xs:element name="Cant" msprop:Generator_ColumnVarNameInTable="columnCant" msprop:Generator_ColumnPropNameInRow="Cant" msprop:Generator_ColumnPropNameInTable="CantColumn" msprop:Generator_UserColumnName="Cant" type="xs:int" />
               <xs:element name="Cod" msprop:Generator_ColumnVarNameInTable="columnCod" msprop:Generator_ColumnPropNameInRow="Cod" msprop:Generator_ColumnPropNameInTable="CodColumn" msprop:Generator_UserColumnName="Cod" type="xs:int" />
               <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
                 <xs:simpleType>
@@ -51,7 +56,24 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Unit" msprop:Generator_ColumnVarNameInTable="columnUnit" msprop:Generator_ColumnPropNameInRow="Unit" msprop:Generator_ColumnPropNameInTable="UnitColumn" msprop:Generator_UserColumnName="Unit" type="xs:decimal" />
-              <xs:element name="total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:double" minOccurs="0" />
+              <xs:element name="total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CUIT" msprop:Generator_ColumnVarNameInTable="columnCUIT" msprop:Generator_ColumnPropNameInRow="CUIT" msprop:Generator_ColumnPropNameInTable="CUITColumn" msprop:Generator_UserColumnName="CUIT">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Final" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFinal" msprop:Generator_ColumnPropNameInRow="Final" msprop:Generator_ColumnPropNameInTable="FinalColumn" msprop:Generator_UserColumnName="Final" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" />
+              <xs:element name="NumFact" msprop:Generator_ColumnVarNameInTable="columnNumFact" msprop:Generator_ColumnPropNameInRow="NumFact" msprop:Generator_ColumnPropNameInTable="NumFactColumn" msprop:Generator_UserColumnName="NumFact" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

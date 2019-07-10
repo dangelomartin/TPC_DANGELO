@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListarArticulosLite));
             this.dgvListarArticulos = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -37,6 +37,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.bntcerrar = new System.Windows.Forms.Button();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarArticulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,15 +45,15 @@
             // 
             this.dgvListarArticulos.AllowUserToAddRows = false;
             this.dgvListarArticulos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dgvListarArticulos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvListarArticulos.Location = new System.Drawing.Point(12, 10);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dgvListarArticulos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvListarArticulos.Location = new System.Drawing.Point(1, 55);
             this.dgvListarArticulos.MultiSelect = false;
             this.dgvListarArticulos.Name = "dgvListarArticulos";
             this.dgvListarArticulos.ReadOnly = true;
             this.dgvListarArticulos.RowHeadersVisible = false;
             this.dgvListarArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListarArticulos.Size = new System.Drawing.Size(505, 215);
+            this.dgvListarArticulos.Size = new System.Drawing.Size(520, 215);
             this.dgvListarArticulos.TabIndex = 0;
             // 
             // btnAgregar
@@ -107,7 +108,7 @@
             // 
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionar.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.Image")));
-            this.btnSeleccionar.Location = new System.Drawing.Point(237, 231);
+            this.btnSeleccionar.Location = new System.Drawing.Point(238, 276);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(51, 51);
             this.btnSeleccionar.TabIndex = 6;
@@ -120,7 +121,7 @@
             this.bntcerrar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.bntcerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntcerrar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.bntcerrar.Location = new System.Drawing.Point(500, 256);
+            this.bntcerrar.Location = new System.Drawing.Point(500, 290);
             this.bntcerrar.Name = "bntcerrar";
             this.bntcerrar.Size = new System.Drawing.Size(75, 23);
             this.bntcerrar.TabIndex = 7;
@@ -128,14 +129,23 @@
             this.bntcerrar.UseVisualStyleBackColor = false;
             this.bntcerrar.Click += new System.EventHandler(this.bntcerrar_Click);
             // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Location = new System.Drawing.Point(12, 20);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(166, 20);
+            this.txtBusqueda.TabIndex = 8;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
+            // 
             // ListarArticulosLite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(587, 291);
+            this.ClientSize = new System.Drawing.Size(587, 325);
             this.ControlBox = false;
+            this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.bntcerrar);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.btnModificar);
@@ -149,10 +159,11 @@
             this.MinimizeBox = false;
             this.Name = "ListarArticulosLite";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ListarArticulos";
+            this.Text = "Lista de Articulos";
             this.Load += new System.EventHandler(this.ListarArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarArticulos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -165,5 +176,6 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnSeleccionar;
         private System.Windows.Forms.Button bntcerrar;
+        private System.Windows.Forms.TextBox txtBusqueda;
     }
 }

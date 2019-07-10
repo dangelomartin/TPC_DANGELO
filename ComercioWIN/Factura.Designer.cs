@@ -42,6 +42,8 @@
             this.lblImporteTotal = new System.Windows.Forms.Label();
             this.lblSelec = new System.Windows.Forms.Label();
             this.btnBorrarArt = new System.Windows.Forms.Button();
+            this.lblNum = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleArticulo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +62,7 @@
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Location = new System.Drawing.Point(261, 13);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(173, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(101, 23);
             this.btnBuscar.TabIndex = 1;
             this.btnBuscar.Text = "Buscar Cliente";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -71,7 +73,7 @@
             this.btnAgregaArt.Enabled = false;
             this.btnAgregaArt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregaArt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregaArt.Location = new System.Drawing.Point(91, 78);
+            this.btnAgregaArt.Location = new System.Drawing.Point(91, 59);
             this.btnAgregaArt.Name = "btnAgregaArt";
             this.btnAgregaArt.Size = new System.Drawing.Size(174, 23);
             this.btnAgregaArt.TabIndex = 3;
@@ -82,7 +84,7 @@
             // txtCantidad
             // 
             this.txtCantidad.Enabled = false;
-            this.txtCantidad.Location = new System.Drawing.Point(19, 80);
+            this.txtCantidad.Location = new System.Drawing.Point(19, 61);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(49, 20);
             this.txtCantidad.TabIndex = 4;
@@ -91,7 +93,7 @@
             // 
             // txtFinal
             // 
-            this.txtFinal.Location = new System.Drawing.Point(648, 332);
+            this.txtFinal.Location = new System.Drawing.Point(312, 327);
             this.txtFinal.Name = "txtFinal";
             this.txtFinal.Size = new System.Drawing.Size(100, 20);
             this.txtFinal.TabIndex = 5;
@@ -109,20 +111,20 @@
             this.dgvDetalleArticulo.AllowUserToAddRows = false;
             this.dgvDetalleArticulo.AllowUserToDeleteRows = false;
             this.dgvDetalleArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetalleArticulo.Location = new System.Drawing.Point(22, 120);
+            this.dgvDetalleArticulo.Location = new System.Drawing.Point(7, 120);
             this.dgvDetalleArticulo.MultiSelect = false;
             this.dgvDetalleArticulo.Name = "dgvDetalleArticulo";
             this.dgvDetalleArticulo.ReadOnly = true;
             this.dgvDetalleArticulo.RowHeadersVisible = false;
             this.dgvDetalleArticulo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalleArticulo.Size = new System.Drawing.Size(726, 185);
+            this.dgvDetalleArticulo.Size = new System.Drawing.Size(405, 185);
             this.dgvDetalleArticulo.TabIndex = 7;
             this.dgvDetalleArticulo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleArticulo_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 61);
+            this.label1.Location = new System.Drawing.Point(19, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 8;
@@ -130,7 +132,8 @@
             // 
             // btnFinalizar
             // 
-            this.btnFinalizar.Location = new System.Drawing.Point(598, 371);
+            this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinalizar.Location = new System.Drawing.Point(262, 350);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(150, 23);
             this.btnFinalizar.TabIndex = 11;
@@ -140,16 +143,16 @@
             // 
             // txtNumFactura
             // 
-            this.txtNumFactura.Location = new System.Drawing.Point(648, 12);
+            this.txtNumFactura.Location = new System.Drawing.Point(322, 62);
             this.txtNumFactura.Name = "txtNumFactura";
-            this.txtNumFactura.Size = new System.Drawing.Size(100, 20);
+            this.txtNumFactura.Size = new System.Drawing.Size(91, 20);
             this.txtNumFactura.TabIndex = 12;
             this.txtNumFactura.TextChanged += new System.EventHandler(this.txtNumFactura_TextChanged);
             // 
             // lblImporteTotal
             // 
             this.lblImporteTotal.AutoSize = true;
-            this.lblImporteTotal.Location = new System.Drawing.Point(663, 316);
+            this.lblImporteTotal.Location = new System.Drawing.Point(327, 311);
             this.lblImporteTotal.Name = "lblImporteTotal";
             this.lblImporteTotal.Size = new System.Drawing.Size(69, 13);
             this.lblImporteTotal.TabIndex = 13;
@@ -167,7 +170,8 @@
             // 
             // btnBorrarArt
             // 
-            this.btnBorrarArt.Location = new System.Drawing.Point(22, 332);
+            this.btnBorrarArt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrarArt.Location = new System.Drawing.Point(22, 313);
             this.btnBorrarArt.Name = "btnBorrarArt";
             this.btnBorrarArt.Size = new System.Drawing.Size(85, 23);
             this.btnBorrarArt.TabIndex = 15;
@@ -175,12 +179,36 @@
             this.btnBorrarArt.UseVisualStyleBackColor = true;
             this.btnBorrarArt.Click += new System.EventHandler(this.btnBorrarArt_Click);
             // 
+            // lblNum
+            // 
+            this.lblNum.AutoSize = true;
+            this.lblNum.Location = new System.Drawing.Point(288, 44);
+            this.lblNum.Name = "lblNum";
+            this.lblNum.Size = new System.Drawing.Size(125, 13);
+            this.lblNum.TabIndex = 16;
+            this.lblNum.Text = "Numero de Comprobante";
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Location = new System.Drawing.Point(7, 350);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrar.TabIndex = 17;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(425, 378);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.lblNum);
             this.Controls.Add(this.btnBorrarArt);
             this.Controls.Add(this.lblSelec);
             this.Controls.Add(this.lblImporteTotal);
@@ -196,6 +224,7 @@
             this.Controls.Add(this.txtcliente);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Factura";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Factura";
             this.Load += new System.EventHandler(this.Factura_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleArticulo)).EndInit();
@@ -219,5 +248,7 @@
         private System.Windows.Forms.Label lblImporteTotal;
         private System.Windows.Forms.Label lblSelec;
         private System.Windows.Forms.Button btnBorrarArt;
+        private System.Windows.Forms.Label lblNum;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

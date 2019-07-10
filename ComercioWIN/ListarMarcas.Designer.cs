@@ -142,7 +142,7 @@
             this.MinimizeBox = false;
             this.Name = "ListarMarcas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ListarMarcas";
+            this.Text = "Lista de Marcas";
             this.Load += new System.EventHandler(this.ListarMarcas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.ResumeLayout(false);

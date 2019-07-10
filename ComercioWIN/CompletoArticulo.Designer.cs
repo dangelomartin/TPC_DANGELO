@@ -283,7 +283,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CompletoArticulo";
-            this.Text = "CompletoArticulo";
+            this.Text = "Datos Del Articulo";
             this.Load += new System.EventHandler(this.CompletoArticulo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

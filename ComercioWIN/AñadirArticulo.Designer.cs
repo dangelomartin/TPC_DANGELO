@@ -296,7 +296,7 @@
             this.MinimizeBox = false;
             this.Name = "AñadirArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AñadirArticulo";
+            this.Text = "Añadir Articulo";
             this.Load += new System.EventHandler(this.AñadirArticulo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

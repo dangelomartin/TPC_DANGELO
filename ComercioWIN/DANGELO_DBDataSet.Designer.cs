@@ -289,6 +289,16 @@ namespace ComercioWIN {
             
             private global::System.Data.DataColumn columntotal;
             
+            private global::System.Data.DataColumn columnCliente;
+            
+            private global::System.Data.DataColumn columnCUIT;
+            
+            private global::System.Data.DataColumn columnFinal;
+            
+            private global::System.Data.DataColumn columnFecha;
+            
+            private global::System.Data.DataColumn columnNumFact;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public ReporteDataTable() {
@@ -364,6 +374,46 @@ namespace ComercioWIN {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ClienteColumn {
+                get {
+                    return this.columnCliente;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CUITColumn {
+                get {
+                    return this.columnCUIT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn FinalColumn {
+                get {
+                    return this.columnFinal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn FechaColumn {
+                get {
+                    return this.columnFecha;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn NumFactColumn {
+                get {
+                    return this.columnNumFact;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -399,14 +449,19 @@ namespace ComercioWIN {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ReporteRow AddReporteRow(double Cant, int Cod, string Descripcion, decimal Unit, double total) {
+            public ReporteRow AddReporteRow(int Cant, int Cod, string Descripcion, decimal Unit, decimal total, string Cliente, string CUIT, decimal Final, System.DateTime Fecha, int NumFact) {
                 ReporteRow rowReporteRow = ((ReporteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Cant,
                         Cod,
                         Descripcion,
                         Unit,
-                        total};
+                        total,
+                        Cliente,
+                        CUIT,
+                        Final,
+                        Fecha,
+                        NumFact};
                 rowReporteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowReporteRow);
                 return rowReporteRow;
@@ -434,12 +489,17 @@ namespace ComercioWIN {
                 this.columnDescripcion = base.Columns["Descripcion"];
                 this.columnUnit = base.Columns["Unit"];
                 this.columntotal = base.Columns["total"];
+                this.columnCliente = base.Columns["Cliente"];
+                this.columnCUIT = base.Columns["CUIT"];
+                this.columnFinal = base.Columns["Final"];
+                this.columnFecha = base.Columns["Fecha"];
+                this.columnNumFact = base.Columns["NumFact"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnCant = new global::System.Data.DataColumn("Cant", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnCant = new global::System.Data.DataColumn("Cant", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCant);
                 this.columnCod = new global::System.Data.DataColumn("Cod", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCod);
@@ -447,14 +507,31 @@ namespace ComercioWIN {
                 base.Columns.Add(this.columnDescripcion);
                 this.columnUnit = new global::System.Data.DataColumn("Unit", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUnit);
-                this.columntotal = new global::System.Data.DataColumn("total", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columntotal = new global::System.Data.DataColumn("total", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntotal);
+                this.columnCliente = new global::System.Data.DataColumn("Cliente", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCliente);
+                this.columnCUIT = new global::System.Data.DataColumn("CUIT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCUIT);
+                this.columnFinal = new global::System.Data.DataColumn("Final", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFinal);
+                this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecha);
+                this.columnNumFact = new global::System.Data.DataColumn("NumFact", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumFact);
                 this.columnCant.AllowDBNull = false;
                 this.columnCod.AllowDBNull = false;
                 this.columnDescripcion.AllowDBNull = false;
                 this.columnDescripcion.MaxLength = 40;
                 this.columnUnit.AllowDBNull = false;
                 this.columntotal.ReadOnly = true;
+                this.columnCliente.AllowDBNull = false;
+                this.columnCliente.MaxLength = 50;
+                this.columnCUIT.AllowDBNull = false;
+                this.columnCUIT.MaxLength = 30;
+                this.columnFinal.ReadOnly = true;
+                this.columnFecha.AllowDBNull = false;
+                this.columnNumFact.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -597,9 +674,9 @@ namespace ComercioWIN {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double Cant {
+            public int Cant {
                 get {
-                    return ((double)(this[this.tableReporte.CantColumn]));
+                    return ((int)(this[this.tableReporte.CantColumn]));
                 }
                 set {
                     this[this.tableReporte.CantColumn] = value;
@@ -641,10 +718,10 @@ namespace ComercioWIN {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double total {
+            public decimal total {
                 get {
                     try {
-                        return ((double)(this[this.tableReporte.totalColumn]));
+                        return ((decimal)(this[this.tableReporte.totalColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'total\' de la tabla \'Reporte\' es DBNull.", e);
@@ -652,6 +729,66 @@ namespace ComercioWIN {
                 }
                 set {
                     this[this.tableReporte.totalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Cliente {
+                get {
+                    return ((string)(this[this.tableReporte.ClienteColumn]));
+                }
+                set {
+                    this[this.tableReporte.ClienteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string CUIT {
+                get {
+                    return ((string)(this[this.tableReporte.CUITColumn]));
+                }
+                set {
+                    this[this.tableReporte.CUITColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal Final {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableReporte.FinalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Final\' de la tabla \'Reporte\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableReporte.FinalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime Fecha {
+                get {
+                    return ((global::System.DateTime)(this[this.tableReporte.FechaColumn]));
+                }
+                set {
+                    this[this.tableReporte.FechaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int NumFact {
+                get {
+                    return ((int)(this[this.tableReporte.NumFactColumn]));
+                }
+                set {
+                    this[this.tableReporte.NumFactColumn] = value;
                 }
             }
             
@@ -665,6 +802,18 @@ namespace ComercioWIN {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SettotalNull() {
                 this[this.tableReporte.totalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsFinalNull() {
+                return this.IsNull(this.tableReporte.FinalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetFinalNull() {
+                this[this.tableReporte.FinalColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -832,6 +981,11 @@ namespace ComercioWIN.DANGELO_DBDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
             tableMapping.ColumnMappings.Add("Unit", "Unit");
             tableMapping.ColumnMappings.Add("total", "total");
+            tableMapping.ColumnMappings.Add("Cliente", "Cliente");
+            tableMapping.ColumnMappings.Add("CUIT", "CUIT");
+            tableMapping.ColumnMappings.Add("Final", "Final");
+            tableMapping.ColumnMappings.Add("Fecha", "Fecha");
+            tableMapping.ColumnMappings.Add("NumFact", "NumFact");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

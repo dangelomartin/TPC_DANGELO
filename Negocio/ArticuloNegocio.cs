@@ -83,7 +83,7 @@ namespace Negocio
                 conexion.ConnectionString = AccesoDatos.AccesoDatosMaster.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "insert into articulo (Descripcion1,CodBarras,StockMin,StockMax,Costo,ganancia,IdMarca,IdRubro,IdProveedores,stockactual) values";
-                comando.CommandText += "('" + nuevo.Descripcion + "', '" + nuevo.codBarras + "', '" + nuevo.StockMin + "', '" + nuevo.StockMax + "', '" + nuevo.Costo + "', '" + nuevo.Ganancia + "', '" + nuevo.Marca.id.ToString() + "', '" + nuevo.Rubro.id.ToString() + "', '" + nuevo.Proveedor.id.ToString() + "','" +nuevo.StockActual+ "')";
+                comando.CommandText += "('" + nuevo.Descripcion + "', '" + nuevo.codBarras + "', '" + nuevo.StockMin + "', '" + nuevo.StockMax + "', '" + nuevo.Costo.ToString().Replace(",",".") + "', '" + nuevo.Ganancia + "', '" + nuevo.Marca.id.ToString() + "', '" + nuevo.Rubro.id.ToString() + "', '" + nuevo.Proveedor.id.ToString() + "','" +nuevo.StockActual+ "')";
                 comando.Connection = conexion;
                 conexion.Open();
 

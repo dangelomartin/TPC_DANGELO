@@ -262,7 +262,7 @@
             this.MinimizeBox = false;
             this.Name = "AñadirProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AñadirProveedor";
+            this.Text = "Añadir Proveedor";
             this.Load += new System.EventHandler(this.AñadirProveedor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

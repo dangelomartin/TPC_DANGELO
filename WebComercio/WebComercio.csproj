@@ -219,6 +219,7 @@
     <Content Include="css\timepicker\bootstrap-timepicker.css" />
     <Content Include="css\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="GenerarComprobante.aspx" />
     <Content Include="Gestion de Clientes.aspx" />
     <Content Include="img\ajax-loader.gif" />
     <Content Include="img\ajax-loader1.gif" />
@@ -384,6 +385,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GenerarComprobante.aspx.cs">
+      <DependentUpon>GenerarComprobante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenerarComprobante.aspx.designer.cs">
+      <DependentUpon>GenerarComprobante.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Gestion de Clientes.aspx.cs">
       <DependentUpon>Gestion de Clientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

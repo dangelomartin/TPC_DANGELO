@@ -152,5 +152,23 @@ namespace ComercioWIN
         {
             Close();
         }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBusqueda.Text == "")
+            {
+                dgvListarArticulos.DataSource = ListArticuloLocal;
+            }
+            else
+            {
+                if (txtBusqueda.Text.Length >= 2)
+                {
+                    List<Articulo> lista;
+                    lista = ListArticuloLocal.FindAll(X => X.Descripcion.ToUpper().Contains(txtBusqueda.Text.ToUpper()));
+                    dgvListarArticulos.DataSource = lista;
+                }
+
+            }
+        }
     }
 }

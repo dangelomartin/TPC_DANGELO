@@ -1,147 +1,67 @@
-﻿function templateRow() {
-    var template = "<tr>";
-    template += ("<td>" + "123" + "</td>");
-    template += ("<td>" + "Jorge Junior" + "</td>");
-    template += ("<td>" + "Rodriguez Castillo" + "</td>");
-    template += ("<td>" + "123" + "</td>");
-    template += ("<td>" + "123" + "</td>");
-    template += ("<td>" + "123" + "</td>");
-    template += ("<td>" + "123" + "</td>");
-    template += "</tr>";
-    return template;
-}
+﻿function descargar(tipo) {
+    $("#ContentPlaceHolder1_dlListaVentas").tableHTMLExport({
+        type: tipo,
+        filename: 'Reporte.' + tipo
+    });
 
-function addRow() {
-    var template = templateRow();
-    for (var i = 0; i < 10; i++) {
-        $("#tbl_body_table").append(template);
-    }
 }
-
-var tabla, data;
+var final = 0;
 
 function addRowDT(data) {
-    var tabla = $("#tbl_Ventas").DataTable();
+    tabla = $("#tl-Detalle").DataTable();
     for (var i = 0; i < data.length; i++) {
         tabla.fnAddData([
-            data.fecha,
-            data.idfactura,
-            data.Cliente,
-            data.Importe
-        ])
+            data[i].cant,
+            data[i].cod,
+            data[i].Descripcion,
+            data[i].PU,
+            data[i].Total,
+            
+        ]); 
+        
+    }
+    var totalFinal = 0;
+    var children = $("tbody")[0].children;
+    for(var i = 0; i < children.length; i++) {
+        totalFinal += parseFloat(children[i].children[4].innerText)
+    }
+    $("#totalFinal").html("$" + totalFinal);
     }
 
-    tabla.fnClearTable();
 
-    for (var i = 0; i < data.length; i++) {
-        tabla.fnAddData([
-  
-        ]);
+
+
+
+    function sendDataAjax() {
+        $.ajax({
+            type: "POST",
+            url: "GenerarComprobante.aspx/ListarArticulo",
+            data: {},
+            contentType: 'application/json; charset=utf-8',
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log(xhr.status + " \n" + xhr.responseText, "\n" + thrownError);
+            },
+            success: function (data) {
+                
+                addRowDT(data.d);
+                var totalFinal = 0;
+                $("tbody")[0].children.map(producto => {
+                    totalFinal += parseFloat(producto.children[4])
+                });
+                $("#totalFinal").html("$" + totalFinal);
+                
+            }
+
+        });
     }
-    
+
+function Listar() {
+    var total = 0;
+
+    $("span[id^='ContentPlaceHolder1_dlListaVentas_lblImporte_']").map((index, value) => total += parseFloat(value.innerText))
+
+    $('#total-ventas').text('$' + total);
 }
 
-function sendDataAjax() {
-    $.ajax({
-        type: "POST",
-        url: "ListarVentas.aspx/getVentas",
-        data: {},
-        contentType: 'application/json; charset=utf-8',
-        error: function (xhr, ajaxOptions, thrownError) {
-            console.log(xhr.status + " \n" + xhr.responseText, "\n" + thrownError);
-        },
-        dataType: "json"
-    }).done(function (info) {
-        console.log(info);
-    });
-}
-
-/*function updateDataAjax() {
-
-    var obj = JSON.stringify({ id: JSON.stringify(data[0]), direccion: $("#txtModalDireccion").val() });
-
-    $.ajax({
-        type: "POST",
-        url: "GestionarPaciente.aspx/ActualizarDatosPaciente",
-        data: obj,
-        dataType: "json",
-        contentType: 'application/json; charset=utf-8',
-        error: function (xhr, ajaxOptions, thrownError) {
-            console.log(xhr.status + " \n" + xhr.responseText, "\n" + thrownError);
-        },
-        success: function (response) {
-            if (response.d) {
-                alert("Registro actualizado de manera correcta.");
-            } else {
-                alert("No se pudo actualizar el registro.");
-            }
-        }
-    });
-}
-*/
-/*
-function deleteDataAjax(data) {
-
-    var obj = JSON.stringify({ id: JSON.stringify(data) });
-
-    $.ajax({
-        type: "POST",
-        url: "GestionarPaciente.aspx/EliminarDatosPaciente",
-        data: obj,
-        dataType: "json",
-        contentType: 'application/json; charset=utf-8',
-        error: function (xhr, ajaxOptions, thrownError) {
-            console.log(xhr.status + " \n" + xhr.responseText, "\n" + thrownError);
-        },
-        success: function (response) {
-            if (response.d) {
-                alert("Registro eliminado de manera correcta.");
-            } else {
-                alert("No se pudo eliminar el registro.");
-            }
-        }
-    });
-}
-*/
-// evento click para boton actualizar
-/*$(document).on('click', '.btn-edit', function (e) {
-    e.preventDefault();
-
-    var row = $(this).parent().parent()[0];
-    data = tabla.fillModalData(row);
-    fillModalData();
-
-});
-*/
-// evento click para boton eliminar
-/*
-$(document).on('click', '.btn-delete', function (e) {
-    e.preventDefault();
-
-    //primer método: eliminar la fila del datatble
-    var row = $(this).parent().parent()[0];
-    var dataRow = tabla.fnGetData(row);
-
-    //segundo método: enviar el codigo del paciente al servidor y eliminarlo, renderizar el datatable
-    // paso 1: enviar el id al servidor por medio de ajax
-    deleteDataAjax(dataRow[0]);
-    // paso 2: renderizar el datatable
+$('#ContentPlaceHolder1_btnAceptar').on('click', Listar());
     sendDataAjax();
-
-});
-
-
-// cargar datos en el modal
-function fillModalData() {
-    $("#txtFullName").val(data[1] + " " + data[2]);
-    $("#txtModalDireccion").val(data[5]);
-}
-
-// enviar la informacion al servidor
-$("#btnactualizar").click(function (e) {
-    e.preventDefault();
-    updateDataAjax();
-});*/
-
-// Llamando a la funcion de ajax al cargar el documento
-sendDataAjax();

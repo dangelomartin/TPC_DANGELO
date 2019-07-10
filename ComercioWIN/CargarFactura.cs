@@ -30,7 +30,6 @@ namespace ComercioWIN
             dgvDetalleArticulo.Columns[1].Width = 50;
             dgvDetalleArticulo.Columns[0].Width = 50;
             dgvDetalleArticulo.Columns[2].Width = 200;
-
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -155,42 +154,48 @@ namespace ComercioWIN
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if(ValidateC())
+            if (ValidateC())
             {
 
-            ComprasNegocio agregar = new ComprasNegocio();
-            Articulo articuloLista = new Articulo();
-            ArticuloNegocio stock = new ArticuloNegocio();
-            if (proveedorLocal != null)
-            {
-                FacturaNueva.NumeroPuesto = txtPuesto.Text;
-                FacturaNueva.NumeroComprobante = txtComprobante.Text;
-                FacturaNueva.fecha = dtpFecha.Value.Date;
-                FacturaNueva.Total = txtMonto.Text.Replace(",",".");
-                FacturaNueva.proveedor = new Proveedor();
-                FacturaNueva.proveedor.id = proveedorLocal.id;
+                ComprasNegocio agregar = new ComprasNegocio();
+                Articulo articuloLista = new Articulo();
+                ArticuloNegocio stock = new ArticuloNegocio();
+                if (txtNombreproov.Text == "")
+                {
+                    MessageBox.Show("SELECCIONE UN PROVEEDOR");
+                }else
+                {
+                    FacturaNueva.NumeroPuesto = txtPuesto.Text;
+                    FacturaNueva.NumeroComprobante = txtComprobante.Text;
+                    FacturaNueva.fecha = dtpFecha.Value.Date;
+                    FacturaNueva.Total = txtMonto.Text.Replace(",", ".");
+                    FacturaNueva.proveedor = new Proveedor();
+                    FacturaNueva.proveedor.id = proveedorLocal.id;
 
                 
-            }
-            if(agregar.NoExiste(FacturaNueva)==true)
-            {
-                agregar.AgregarCompra(FacturaNueva);
-            }else
-            {
-                MessageBox.Show("EL COMPROBANTE INGRESADO YA EXISTE");
-                return;
-            }
 
-                foreach (DataGridViewRow row in dgvDetalleArticulo.Rows)
-                {
-                    articuloLista.id = Convert.ToInt32(row.Cells["Cod"].Value);
-                    articuloLista.StockActual = Convert.ToInt32(row.Cells["Cant"].Value);
-                    stock.SubirStock(articuloLista);
+
+                    if (agregar.NoExiste(FacturaNueva) == true)
+                    {
+                        agregar.AgregarCompra(FacturaNueva);
+                    }
+                    else
+                    {
+                        MessageBox.Show("EL COMPROBANTE INGRESADO YA EXISTE");
+                        return;
+                    }
+
+                    foreach (DataGridViewRow row in dgvDetalleArticulo.Rows)
+                    {
+                        articuloLista.id = Convert.ToInt32(row.Cells["Cod"].Value);
+                        articuloLista.StockActual = Convert.ToInt32(row.Cells["Cant"].Value);
+                        stock.SubirStock(articuloLista);
+                    }
+
+                    Close();
+
+
                 }
-
-                Close();
-
-
             }
 
         }

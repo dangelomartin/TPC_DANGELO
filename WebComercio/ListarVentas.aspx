@@ -58,12 +58,12 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="row">   
+                        <div class="row">
                         </div>
                         <div style="margin-left: auto; margin-right: auto; text-align: center">
                             <h3>Buscar Por Numero de Factura</h3>
                         </div>
-                        
+
                         <div class="row">
                             <div class="mx-auto" style="width: 170px;">
                                 <table>
@@ -73,13 +73,21 @@
                                         </td>
                                         <td>
 
-                                            <asp:Button ID="btnNumFact" Text="Aceptar" runat="server"  CssClass="btn btn-primary" OnClick="btnNumFact_Click" />
+                                            <asp:Button ID="btnNumFact" Text="Aceptar" runat="server" CssClass="btn btn-primary" OnClick="btnNumFact_Click" />
                                         </td>
                                     </tr>
                                 </table>
                             </div>
                         </div>
-                        <div class="row">   
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="col-2">
+                                    <button type="button" class="btn btn-danger" onclick="descargar('pdf')">Exportar PDF</button>
+                                </div>
+                                <div class="col-2">
+                                    <button type="button" class="btn btn-success" onclick="descargar('csv')">Exportar Excel</button>
+                                </div>
+                            </div>
                         </div>
                         <asp:GridView ID="dlListaVentas" runat="server" CssClass="table table-active " EmptyDataText="No Existen Registros"
                             GridLines="Horizontal" AutoGenerateColumns="false" OnSelectedIndexChanged="dlListaVentas_SelectedIndexChanged">
@@ -112,14 +120,20 @@
                                 </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
-                    </div>
+                        <div class="row bg-success text-white">
+                            <div class="col-10">TOTAL</div>
+                            <div class="col-2" id="total-ventas">$0</div>
+                        </div>
                 </div>
             </div>
+        </div>
         </div>
 
     </section>
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server"></asp:Content>
+
+
 
 

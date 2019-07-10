@@ -176,5 +176,80 @@ namespace Negocio
             }
             
         }
+
+        public List<ArticuloWeb> ArticulosXComprobante(int id)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            List<ArticuloWeb> listado = new List<ArticuloWeb>();
+            ArticuloWeb nuevo;
+
+            try
+            {
+                conexion.ConnectionString = AccesoDatosMaster.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "exec sp_ReporteFactura "+ id;
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    nuevo = new ArticuloWeb();
+                    nuevo.cant = (int)lector["Cant"];
+                    nuevo.cod = (int)lector["Cod"];
+                    nuevo.Descripcion = (string)lector["Descripcion"];
+                    nuevo.PU = (decimal)lector["P.U."];
+                    nuevo.Total = (decimal)lector["Total"];
+                    listado.Add(nuevo);
+                }
+                return listado;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
+        public bool ValidarFactura(int factura)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            try
+            {
+                conexion.ConnectionString = AccesoDatosMaster.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = String.Format("select count(*) as conteo from DetalleVenta where idFactura = '{0}' ", factura.ToString());
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    if ((int)lector["conteo"] == 1)
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+
+        }
     }
 }

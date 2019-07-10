@@ -92,7 +92,7 @@
             this.MinimizeBox = false;
             this.Name = "AñadirMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AñadirMarca";
+            this.Text = "Añadir Marca";
             this.Load += new System.EventHandler(this.AñadirMarca_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

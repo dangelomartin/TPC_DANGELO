@@ -8,7 +8,6 @@ namespace Dominio
 {
     public class Usuarios
     {
-        public int id { set; get; }
         public string user { set; get; }
         public string pass { set; get; }
     }
