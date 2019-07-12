@@ -14,25 +14,38 @@ namespace WebComercio
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Sesion.Sesion.cambiarEstado(false);
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
             UsuarioNegocio user = new UsuarioNegocio();
-            Usuarios login = new Usuarios();
-            login.user = txtUsuario.Text;
-            login.pass = txtPass.Text;
-            if (user.ValidarUsuario(login))
+            Usuarios login = new Usuarios
             {
+                user = txtUsuario.Text,
+                pass = txtPass.Text
+            };
+            UsuarioNegocio nego = new UsuarioNegocio();
+            int num = nego.Datos(login,2);
+            if (num == 0)
+            {
+                Sesion.Sesion.cambiarEstado(true);
                 Response.Write("<script>alert('USUARIO CORRECTO')</script>");
                 Response.Redirect("PanelGeneral.aspx");
             }
-            else
+            else if (num == 1)
             {
                 Response.Write("<script>alert('USUARIO O CONTRASEÑA INCORRECTOS')</script>");
             }
-               
+            else if (num == 2)
+            {
+                Response.Write("<script>alert('USUARIO BLOQUEADO')</script>");
+            }
+            else
+            {
+                Response.Write("<script>alert('USUARIO INEXISTENTE')</script>");
+            }
+
         }
     }
 }

@@ -71,7 +71,7 @@ namespace ComercioWIN
                     articuloLocal = new Articulo();
                     string costo = txtCosto.Text.Replace(".", ",");
                 articuloLocal.Descripcion = txtDescri1.Text.ToUpper();
-                articuloLocal.codBarras = (int.Parse(txtCodBarras.Text));
+                articuloLocal.codBarras = (long.Parse(txtCodBarras.Text));
                 articuloLocal.Marca = (Marca)cboMarca.SelectedItem;
                 articuloLocal.Rubro = (Rubro)cboRubro.SelectedItem;
                 articuloLocal.Proveedor = (Proveedor)cboProveedor.SelectedItem;

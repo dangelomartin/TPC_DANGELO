@@ -33,11 +33,14 @@ namespace ComercioWIN
                 frm.Show();
             }else if (num==1)
             {
-                MessageBox.Show("contraseña incorrecto");
+                MessageBox.Show("contraseña incorrecta");
             }
             else if(num==2)
             {
                 MessageBox.Show("Usuario Bloqueado");
+            }else
+            {
+                MessageBox.Show("Usuario Inexistente");
             }
 
 

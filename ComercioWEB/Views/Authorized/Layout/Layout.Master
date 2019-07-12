@@ -6,7 +6,6 @@
 <head>
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="../../../Content/Images/apple-icon.png">
-    <link rel="icon" type="image/png" href="../../../Content/Images/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Material Dashboard PRO by Creative Tim
     </title>

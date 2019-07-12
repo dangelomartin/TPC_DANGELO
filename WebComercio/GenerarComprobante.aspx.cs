@@ -11,22 +11,27 @@ using Negocio;
 
 namespace WebComercio
 {
-    
+
     public partial class GenerarComprobante : System.Web.UI.Page
     {
-        
-    protected void Page_Load(object sender, EventArgs e)
+        public static int comprobante = 0;
+        protected void Page_Load(object sender, EventArgs e)
         {
-        
+            if (!Sesion.Sesion.estaActivo)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            comprobante = Convert.ToInt32(Request["comprobante"]);
         }
+
         [WebMethod]
         public static List<ArticuloWeb> ListarArticulo()
         {
             List<ArticuloWeb> Lista = null;
             try
             {
-            DetalleVentaNegocio negocio = new DetalleVentaNegocio();
-                Lista = negocio.ArticulosXComprobante(3);
+                DetalleVentaNegocio negocio = new DetalleVentaNegocio();
+                Lista = negocio.ArticulosXComprobante(comprobante);
             }
             catch (Exception ex)
             {

@@ -22,7 +22,7 @@
                     <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control" placeholder="Ingrese Usuario...."></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <asp:TextBox ID="txtPass" runat="server" CssClass="form-control" placeholder="Ingrese Contraseña...."></asp:TextBox>
+                    <asp:TextBox type="password" ID="txtPass" runat="server" CssClass="form-control" placeholder="Ingrese Contraseña...."></asp:TextBox>
                 </div>
             </div>
             <div class="footer">

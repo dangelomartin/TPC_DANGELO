@@ -1,5 +1,5 @@
-﻿function descargar(tipo) {
-    $("#ContentPlaceHolder1_dlListaVentas").tableHTMLExport({
+﻿function descargar(tipo, target = 'ContentPlaceHolder1_dlListaVentas') {
+    $("#" + target).tableHTMLExport({
         type: tipo,
         filename: 'Reporte.' + tipo
     });
@@ -20,12 +20,18 @@ function addRowDT(data) {
         ]); 
         
     }
+
     var totalFinal = 0;
     var children = $("tbody")[0].children;
     for(var i = 0; i < children.length; i++) {
         totalFinal += parseFloat(children[i].children[4].innerText)
     }
-    $("#totalFinal").html("$" + totalFinal);
+
+    $("tbody").append('<tr style="background-color: aliceblue;"><td></td><td></td><td></td><td>TOTAL</td><td>' + "$" + totalFinal + '</td></tr>')
+        .append('<tr style="display:none"><td colspan="5" class="text-left"><p>Cliente: <span id="clienteth"></span></p></td></tr>')
+        .append('<tr style="display:none"><td colspan="5" class="text-left"><p>Comprobante N° <span>' + algo + '</span></p></td></tr>')
+        .append('<tr style="display:none"><td colspan="5" class="text-left"><p>CUIT: <span id="cuitth"></span></p></td></tr>')
+        .append('<tr style="display:none"><td colspan="5" class="text-left"><p>Fecha: <span id="fechath"></span></p></td></tr>');
     }
 
 
@@ -41,15 +47,20 @@ function addRowDT(data) {
             error: function (xhr, ajaxOptions, thrownError) {
                 console.log(xhr.status + " \n" + xhr.responseText, "\n" + thrownError);
             },
-            success: function (data) {
-                
-                addRowDT(data.d);
-                var totalFinal = 0;
-                $("tbody")[0].children.map(producto => {
-                    totalFinal += parseFloat(producto.children[4])
-                });
-                $("#totalFinal").html("$" + totalFinal);
-                
+            success: function (data) {                
+                addRowDT(data.d);  
+                var cliente = data.d[0].cliente;
+                var cuit = data.d[0].cuit;
+                var fecha = data.d[0].fecha;
+                $('#cliente').text(cliente);
+                $('#cuit').text(cuit);
+                $('#fecha').text(fecha);
+                $('#clienteth').text(cliente);
+                $('#cuitth').text(cuit);
+                $('#fechath').text(fecha);
+
+                $('#tl-Detalle_info').hide();
+                $('.dataTables_paginate').hide();
             }
 
         });
@@ -63,5 +74,17 @@ function Listar() {
     $('#total-ventas').text('$' + total);
 }
 
-$('#ContentPlaceHolder1_btnAceptar').on('click', Listar());
-    sendDataAjax();
+$(document).ready(function () {
+    const path = location.pathname;
+
+    switch (path) {
+        case '/ListarVentas.aspx':
+            $('#ContentPlaceHolder1_btnAceptar').on('click', Listar());
+            break;
+        case '/GenerarComprobante.aspx':
+            sendDataAjax();
+            break;
+        default:
+            break;
+    }
+});

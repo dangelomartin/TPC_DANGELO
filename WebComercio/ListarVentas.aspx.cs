@@ -17,6 +17,10 @@ namespace WebComercio
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Sesion.Sesion.estaActivo)
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
 
         public void cargartodo()

@@ -16,7 +16,11 @@ namespace WebComercio
             //clientelocal = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-        if (!Page.IsPostBack)
+            if (!Sesion.Sesion.estaActivo)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            if (!Page.IsPostBack)
             {
 
                 ContribuyenteNegocio contribuyente = new ContribuyenteNegocio();

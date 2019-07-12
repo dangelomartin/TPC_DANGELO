@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListarArticulosLite));
             this.dgvListarArticulos = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -45,8 +45,8 @@
             // 
             this.dgvListarArticulos.AllowUserToAddRows = false;
             this.dgvListarArticulos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.dgvListarArticulos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.dgvListarArticulos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListarArticulos.Location = new System.Drawing.Point(1, 55);
             this.dgvListarArticulos.MultiSelect = false;
             this.dgvListarArticulos.Name = "dgvListarArticulos";
@@ -107,6 +107,7 @@
             // btnSeleccionar
             // 
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeleccionar.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSeleccionar.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.Image")));
             this.btnSeleccionar.Location = new System.Drawing.Point(238, 276);
             this.btnSeleccionar.Name = "btnSeleccionar";
@@ -153,7 +154,7 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvListarArticulos);
-            this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

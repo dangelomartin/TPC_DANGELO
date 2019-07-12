@@ -118,6 +118,11 @@
                                         <asp:Label runat="server" ID="lblImporte" Text='<%# Eval("Importe")%>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
+                                <asp:TemplateField HeaderText="" HeaderStyle-Width="30px">
+                                    <ItemTemplate>
+                                        <a href="GenerarComprobante.aspx?Comprobante=<%# Eval("NumFactura") %>" class="btn btn-primary text-white">Generar Comprobante</a>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
                         <div class="row bg-success text-white">

@@ -11,13 +11,13 @@ namespace Negocio
 {
     public class UsuarioNegocio
     {
-        public int Datos(Usuarios Userlocal)
+        public int Datos(Usuarios Userlocal, int tipo=1)
         {
-            if (ValidarUsuarioypass(Userlocal))
+            if (ValidarUsuarioypass(Userlocal, tipo))
             {
                 return 0;
             }
-            else if (ValidarUsuario(Userlocal))
+            else if (ValidarUsuario(Userlocal, tipo))
             {
                 BajaUsuario(Userlocal);
                 return 1;
@@ -30,7 +30,7 @@ namespace Negocio
 
         }
 
-        public bool ValidarUsuarioypass(Usuarios user)
+        public bool ValidarUsuarioypass(Usuarios user, int tipo)
         {
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
@@ -39,7 +39,7 @@ namespace Negocio
             {
                 conexion.ConnectionString = AccesoDatosMaster.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = String.Format("select count(*) as conteo from Users as u where Usuario = '{0}' and Pass = '{1}' and intentos < 3", user.user, user.pass);
+                comando.CommandText = String.Format("select count(*) as conteo from Users as u where Usuario = '{0}' and Pass = '{1}' and intentos < 3 and Tipo={2}", user.user, user.pass, tipo);
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -64,7 +64,7 @@ namespace Negocio
             }
 
         }
-        public bool ValidarUsuario(Usuarios user)
+        public bool ValidarUsuario(Usuarios user, int tipo)
         {
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
@@ -73,7 +73,7 @@ namespace Negocio
             {
                 conexion.ConnectionString = AccesoDatosMaster.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = String.Format("select count(*) as conteo from Users as u where Usuario = '{0}' and intentos < 3", user.user);
+                comando.CommandText = String.Format("select count(*) as conteo from Users as u where Usuario = '{0}' and intentos < 3 and Tipo = {1}", user.user,tipo);
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -156,7 +156,50 @@ namespace Negocio
 
 
         }
+        public Usuarios BuscarUsuario(string nombre)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            
+
+            try
+            {
+                conexion.ConnectionString = AccesoDatos.AccesoDatosMaster.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = string.Format("select Usuario, Pass, Intentos, Tipo from users where usuario='admin'");
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
+                Usuarios nuevo;
+                nuevo = null;
+
+                while (lector.Read())
+                {
+                    nuevo.user = (string)lector["Usuario"];
+                    nuevo.pass = (string)lector["Pass"];
+                    nuevo.tipo = (int)lector["Intentos"];
+                    nuevo.intentos = (int)lector["Tipo"];
+                    
+                }
+                return nuevo;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
 
 
+        }
+        
     }
+
+
 }
+

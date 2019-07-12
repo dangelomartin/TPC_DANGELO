@@ -189,7 +189,7 @@ namespace Negocio
             {
                 conexion.ConnectionString = AccesoDatosMaster.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "exec sp_ReporteFactura "+ id;
+                comando.CommandText = "exec reporte "+ id;
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -200,8 +200,12 @@ namespace Negocio
                     nuevo.cant = (int)lector["Cant"];
                     nuevo.cod = (int)lector["Cod"];
                     nuevo.Descripcion = (string)lector["Descripcion"];
-                    nuevo.PU = (decimal)lector["P.U."];
+                    nuevo.PU = (decimal)lector["Unit"];
                     nuevo.Total = (decimal)lector["Total"];
+                    nuevo.cliente = (string)lector["Cliente"];
+                    nuevo.cuit = (string)lector["CUIT"];
+                    nuevo.fecha = ((DateTime)lector["Fecha"]).ToString("yyyy-MM-dd");
+                    
                     listado.Add(nuevo);
                 }
                 return listado;

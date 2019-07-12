@@ -10,5 +10,7 @@ namespace Dominio
     {
         public string user { set; get; }
         public string pass { set; get; }
+        public int tipo { set; get; }
+        public int intentos { set; get; }
     }
 }
