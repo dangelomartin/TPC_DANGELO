@@ -77,7 +77,7 @@ namespace ComercioWIN
                 articuloLocal.Proveedor = (Proveedor)cboProveedor.SelectedItem;
                 articuloLocal.StockMin = int.Parse(txtStockMin.Text);
                 articuloLocal.StockMax = int.Parse(txtStockMax.Text);
-                articuloLocal.Costo = decimal.Parse(costo);
+                articuloLocal.Costo = decimal.Parse(txtCosto.Text.Replace(".", ","));
                 
                 articuloLocal.Ganancia = int.Parse(txtGanancia.Text);
 
